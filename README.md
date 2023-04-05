@@ -1,2 +1,2 @@
-# yas
-yet another sustainability classifier
+# seesus: a social, environmental, and economic sustainability classifier
+
