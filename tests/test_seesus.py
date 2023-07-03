@@ -1,9 +1,9 @@
-from seesus.seesus import seesus
+from seesus.seesus import SeeSus
 import pytest
 
 def test_seesus():
     text = "our goal is to mitigate climate change, end poverty, and reduce inequality globally"
-    result = seesus(text)
+    result = SeeSus(text)
     targets = result.target
     sdgs = result.sdg
     see = result.see
