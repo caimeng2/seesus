@@ -8,6 +8,8 @@ setup(
     author="Meng Cai",
     author_email="mengcai24601@gmail.com",
     packages=["seesus"],
-    install_requires=["pytest"],
-    include_package_data=True
+    install_requires=["pytest","regex", "csv"],
+    include_package_data=True,
+    package_data={'': ['data/*.csv']},
+    url="https://github.com/caimeng2/seesus"
 )
