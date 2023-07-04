@@ -3,6 +3,12 @@ and classify into social, environmental, and economic sustainability"""
 
 import csv
 import regex as re
+import pathlib
+
+
+def datapath():
+    return pathlib.Path(__file__).parent.resolve()
+        
 
 def id_sus(text):
     """
@@ -16,13 +22,18 @@ def id_sus(text):
         raise ValueError("Input must be a string.")
     sdgs = []
     targets = []
-    with open("data/SDG_keys.csv", "r") as file:
+    
+    with open(datapath() / "data" / "SDG_keys.csv", "r") as file:
         for row in csv.DictReader(file):
             sdg_id = row["SDG_id"]
             sdg_keywords = row["SDG_keywords"]
-            if re.search(sdg_keywords, text, re.IGNORECASE):
-                targets.append(sdg_id)
-                sdgs.append(sdg_id.split("_")[0])
+            try:
+                if re.search(sdg_keywords, text, re.IGNORECASE):
+                    targets.append(sdg_id)
+                    sdgs.append(sdg_id.split("_")[0])
+            except Exception as e:
+                print(sdg_keywords)
+                print(f"ERROR: {e}") 
     sdg = list(set(sdgs)) # keep unique sdgs
     target = list(set(targets)) # keep unique targets
     return sdg, target
@@ -35,7 +46,7 @@ def cat_sus(target):
     as keys.
     """
     see = {"social_sustainability":0, "environmental_sustainability":0, "economic_sustainability":0}
-    with open("data/see.csv", "r") as file:
+    with open(datapath() / "data" / "see.csv", "r") as file:
         next(file) # skip csv header
         for row in csv.reader(file):
             sdg_id, soc, env, econ = row[:4]
