@@ -7,7 +7,7 @@ name = "seesus"
 version = "0.1.0"
 description = "a social, environmental, and economic sustainability classifier"
 license = "GPL-3.0"
-readme = README.md
+readme = "README.md"
 dependencies = ["pytest","regex","csv"]
 
 [tool.setuptools]
