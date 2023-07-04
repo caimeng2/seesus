@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seesus"
+version = "0.1.0"
+description = "a social, environmental, and economic sustainability classifier"
+license = "GPL-3.0"
+readme = README.md
+dependencies = ["pytest","regex","csv"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["seesus"]
