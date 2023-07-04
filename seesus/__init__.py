@@ -1,1 +1,1 @@
-from seesus.seesus import seesus
+from seesus.seesus import SeeSus
