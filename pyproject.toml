@@ -9,7 +9,13 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "seesus"
 version = "0.1.0"
-authors = [ {name = "Meng Cai", email = "Meng@cai.com"}, ]
+authors = [
+    {name = "Meng Cai", email = "mengcai24601@gmail.com"},
+    {name = "Yingjie Li", email = "yingjieli.edu@gmail.com"},
+    {name = "Dirk Colbry", email = "colbrydi@msu.edu"},
+    {name = "Veronica Frans", email = "verofrans@gmail.com"},
+    {name = "Yuqian Zhang", email = "zhan1364@msu.edu"}
+    ]
 description = "a social, environmental, and economic sustainability classifier"
 readme = "README.md"
 requires-python = ">=3.7"

@@ -5,11 +5,10 @@ import csv
 import regex as re
 import pathlib
 
-
 def datapath():
+    """A helper function for setting up data path."""
     return pathlib.Path(__file__).parent.resolve()
         
-
 def id_sus(text):
     """
     Identify the UN SDGs and their associated targets in text.
@@ -22,7 +21,6 @@ def id_sus(text):
         raise ValueError("Input must be a string.")
     sdgs = []
     targets = []
-    
     with open(datapath() / "data" / "SDG_keys.csv", "r") as file:
         for row in csv.DictReader(file):
             sdg_id = row["SDG_id"]
@@ -63,4 +61,3 @@ class SeeSus():
     def __init__(self, text):
         self.sdg, self.target = id_sus(text)
         self.see = cat_sus(self.target)
-        
