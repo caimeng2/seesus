@@ -1,5 +1,5 @@
 import pytest
-from seesus.seesus import SeeSus
+from seesus import SeeSus
 
 def test_seesus():
     text = "our goal is to mitigate climate change, end poverty, and reduce inequality globally"
