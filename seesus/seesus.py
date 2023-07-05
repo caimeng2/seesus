@@ -2,13 +2,13 @@
 and classify into social, environmental, and economic sustainability"""
 
 import csv
-import regex as re
 import pathlib
+import regex as re
 
 def datapath():
     """A helper function for setting up data path."""
     return pathlib.Path(__file__).parent.resolve()
-        
+
 def id_sus(text):
     """
     Identify the UN SDGs and their associated targets in text.
@@ -29,9 +29,9 @@ def id_sus(text):
                 if re.search(sdg_keywords, text, re.IGNORECASE):
                     targets.append(sdg_id)
                     sdgs.append(sdg_id.split("_")[0])
-            except Exception as e:
+            except Exception as error:
                 print(sdg_keywords)
-                print(f"ERROR: {e}") 
+                print(f"ERROR: {error}")
     sdg = list(set(sdgs)) # keep unique sdgs
     target = list(set(targets)) # keep unique targets
     return sdg, target
