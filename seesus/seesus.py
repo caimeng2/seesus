@@ -1,17 +1,14 @@
 """Identify 17 Sustainable Development Goals (SDGs) and their 169 targets in text,
 and classify into social, environmental, and economic sustainability"""
 
-import csv
-import pathlib
+from seesus.SDG_keys import SDG_keys 
+from seesus.see_keys import see_keys 
 import regex as re
-
-def datapath():
-    """A helper function for setting up data path."""
-    return pathlib.Path(__file__).parent.resolve()
 
 def id_sus(text):
     """
-    Identify the UN SDGs and their associated targets in text.
+    Identify the UN Sustainable Development Goals (SDGs) and their associated targets in text.
+    
     Input: a string.
     Output:
         sdg: a list of SDGs identified in text.
@@ -21,20 +18,19 @@ def id_sus(text):
         raise ValueError("Input must be a string.")
     sdgs = []
     targets = []
-    with open(datapath() / "data" / "SDG_keys.csv", "r") as file:
-        for row in csv.DictReader(file):
-            sdg_id = row["SDG_id"]
-            sdg_keywords = row["SDG_keywords"]
-            try:
-                if re.search(sdg_keywords, text, re.IGNORECASE):
-                    targets.append(sdg_id)
-                    sdgs.append(sdg_id.split("_")[0])
-            except Exception as error:
-                print(sdg_keywords)
-                print(f"ERROR: {error}")
-    sdg = list(set(sdgs)) # keep unique sdgs
-    target = list(set(targets)) # keep unique targets
-    return sdg, target
+    matches = []
+    for item in SDG_keys:
+        sdg_id = item["SDG_id"]
+        sdg_keywords = item["SDG_keywords"]
+        match_type = item["match_tpye"]
+        if re.search(sdg_keywords, text, re.IGNORECASE):
+            sdgs.append(sdg_id.split("_")[0])
+            targets.append(sdg_id)
+            matches.append(match_type)
+    sdgs = list(set(sdgs)) # keep unique sdgs
+    targets = list(set(targets)) # keep unique targets
+    matches = list(set(matches)) # keep unique match types
+    return sdgs, targets, matches
 
 def cat_sus(target):
     """
@@ -44,20 +40,18 @@ def cat_sus(target):
     as keys.
     """
     see = {"social_sustainability":0, "environmental_sustainability":0, "economic_sustainability":0}
-    with open(datapath() / "data" / "see.csv", "r") as file:
-        next(file) # skip csv header
-        for row in csv.reader(file):
-            sdg_id, soc, env, econ = row[:4]
-            for i in range(len(target)):
-                if target[i] == sdg_id:
-                    see["social_sustainability"] += int(soc)
-                    see["environmental_sustainability"] += int(env)
-                    see["economic_sustainability"] += int(econ)
+    for item in see_keys:
+        sdg_id, soc, env, econ = item[:4]
+        for i in range(len(target)):
+            if target[i] == sdg_id:
+                see["social_sustainability"] += int(soc)
+                see["environmental_sustainability"] += int(env)
+                see["economic_sustainability"] += int(econ)
     see = {key: True if see[key] > 0 else False for key in see} # convert to boolean values
     return see
 
 class SeeSus():
     """A social, environmental, and economic sustainability classifier."""
     def __init__(self, text):
-        self.sdg, self.target = id_sus(text)
+        self.sdg, self.target, self.match = id_sus(text)
         self.see = cat_sus(self.target)
