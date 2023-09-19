@@ -3,6 +3,7 @@ and classify into social, environmental, and economic sustainability"""
 
 from seesus.SDG_keys import SDG_keys 
 from seesus.see_keys import see_keys 
+from seesus.SDG_desc import goal_desc, tar_desc
 import regex as re
 
 def id_sus(text):
@@ -50,8 +51,38 @@ def cat_sus(target):
     see = {key: True if see[key] > 0 else False for key in see} # convert to boolean values
     return see
 
+def label_sdg(sdg_id):
+    """
+    Label SDG id with SDG description.
+    Input: a list of SDG id.
+    Output: a list of SDG descriptions corresponding to the list of SDG id.
+    """
+    sdg_desc = []
+    for item in goal_desc:
+        goal_id, desc = item[:2]
+        for i in range(len(sdg_id)):
+            if sdg_id[i] == goal_id:
+                sdg_desc.append(desc)
+    return sdg_desc
+
+def label_target(target_id):
+    """
+    Label target id with target description.
+    Input: a list of target id.
+    Output: a list of target descriptions corresponding to the list of target id.
+    """
+    target_desc = []
+    for item in tar_desc:
+        tar_id, desc = item[:2]
+        for i in range(len(target_id)):
+            if target_id[i] == tar_id:
+                target_desc.append(desc)
+    return target_desc
+
 class SeeSus():
     """A social, environmental, and economic sustainability classifier."""
     def __init__(self, text):
         self.sdg, self.target, self.match = id_sus(text)
+        self.sdg_desc = label_sdg(self.sdg)
+        self.target_desc = label_target(self.target)
         self.see = cat_sus(self.target)
