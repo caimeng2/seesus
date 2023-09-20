@@ -49,7 +49,7 @@ def cat_sus(target):
                 see["social_sustainability"] += int(soc)
                 see["environmental_sustainability"] += int(env)
                 see["economic_sustainability"] += int(econ)
-    see = {key: True if see[key] > 0 else False for key in see} # convert to boolean values
+    see = {key: True if see[key] > 0 else False for key in see}
     return see
 
 def label_sdg(sdg_id):
@@ -87,3 +87,52 @@ class SeeSus():
         self.sdg_desc = label_sdg(self.sdg)
         self.target_desc = label_target(self.target)
         self.see = cat_sus(self.target)
+    
+    def show_syntax(sdg_id):
+        """
+        Print the regular expression match syntax of SDGs.
+        
+        Parameters
+        ----------
+            sdg_id: str
+                Target level SDG id (e.g., "SDG1_1").
+                
+        Returns
+        -------
+        None
+        """
+        ids = list(set([item["SDG_id"] for item in SDG_keys]))
+        if sdg_id not in ids:
+            raise ValueError(f"Invalid input. Choose one in the list: {ids}")
+        syntax = [d for d in SDG_keys if d["SDG_id"] == sdg_id]
+        print(syntax)  
+        return
+    
+    def edit_syntax(sdg_id, new_syntax, match_type="indirect"):
+        """
+        Edit the regular expression match syntax of SDGs.
+        
+        Parameters
+        ----------
+            sdg_id: str
+                Target level SDG id (e.g., "SDG1_1").
+            new_syntax: str
+                User defined matching syntax. More info on regular expressions: https://regex101.com/.
+            match_type: str, optional
+                The match type of syntax to be edited, either "direct" (e.g., "SDG 1") or "indirect" ("no more starving"). 
+                Default is "indirect".
+                
+        Returns
+        -------
+        None
+        """
+        ids = list(set([item["SDG_id"] for item in SDG_keys]))
+        if sdg_id not in ids:
+            raise ValueError(f"Invalid input '{sdg_id}'. Use one in the list: {ids}.")
+        if match_type not in ["direct", "indirect"]:
+            raise ValueError(f"Invalid input '{match_type}'. Use 'direct' or 'indirect'. Default is 'indirect'.")
+        for item in SDG_keys:
+            if item["SDG_id"] == sdg_id and item["match_type"] == match_type:               
+                item.update({"SDG_keywords": new_syntax})
+        print(f"The {match_type} match syntax of {sdg_id} has been updated.")
+        return
