@@ -24,9 +24,13 @@ def id_sus(text):
         matches: a list 
             Match types, either "direct" (e.g., "no poverty" matches SDG1: No Poverty) 
             or "indirect" (e.g., "no more starving" matches SDG2: Zero Hunger). 
+    
+    Raises
+    ------
+        TypeError: if text is not a string.
     """
     if not isinstance(text, str): # check input data type
-        raise ValueError("Input must be a string.")
+        raise TypeError("Input must be a string.")
     sdgs = []
     targets = []
     matches = []
@@ -143,7 +147,16 @@ class SeeSus():
         edit_syntax(sdg_id, new_syntax, match_type="indirect"):
             Edit the regular expression match syntax of target-level SDGs.
     """
+    
     def __init__(self, text):
+        """
+        Initialize attributes.
+        
+        Parameters
+        ----------
+            text: str
+                Text to be analyzed. It is recommended to input one sentence rather than a lengthy paragraph.
+        """
         self.sdg, self.target, self.match = id_sus(text)
         self.sdg_desc = label_sdg(self.sdg)
         self.target_desc = label_target(self.target)
@@ -161,9 +174,13 @@ class SeeSus():
         Returns
         -------
             None
+            
+        Raises
+        ------
+            ValueError: if sdg_id is invalid.
         """
         ids = list(set([item["SDG_id"] for item in SDG_keys]))
-        if sdg_id not in ids:
+        if sdg_id not in ids: # check if sdg id is valid
             raise ValueError(f"Invalid input. Choose one in the list: {ids}")
         syntax = [d for d in SDG_keys if d["SDG_id"] == sdg_id]
         print(syntax)  
@@ -186,11 +203,16 @@ class SeeSus():
         Returns
         -------
             None
+            
+        Raises
+        ------
+            ValueError: if sdg_id is invalid.
+            ValueError: if match_type is invalid.
         """
         ids = list(set([item["SDG_id"] for item in SDG_keys]))
-        if sdg_id not in ids:
+        if sdg_id not in ids:  # check if sdg id is valid
             raise ValueError(f"Invalid input '{sdg_id}'. Use one in the list: {ids}.")
-        if match_type not in ["direct", "indirect"]:
+        if match_type not in ["direct", "indirect"]:  # check if match type is valid
             raise ValueError(f"Invalid input '{match_type}'. Use 'direct' or 'indirect'. Default is 'indirect'.")
         for item in SDG_keys:
             if item["SDG_id"] == sdg_id and item["match_type"] == match_type:               
