@@ -1,5 +1,5 @@
 """Identify 17 Sustainable Development Goals (SDGs) and their 169 targets in text,
-and classify into social, environmental, and economic sustainability"""
+and classify into social, environmental, and economic sustainability."""
 
 from seesus.SDG_keys import SDG_keys 
 from seesus.see_keys import see_keys 

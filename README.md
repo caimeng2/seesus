@@ -1,3 +1,3 @@
 ## seesus: a social, environmental, and economic sustainability classifier
 
-more description coming up
+`seesus` is a Python software that checks whether a textual expression aligns with sustainability as defined by the United Nations Sustainable Development Goals (SDGs). It labels a statement with the 17 SDGs as well as 169 specific targets and categorizes the statement into social, environmental, or economic sustainability. 
