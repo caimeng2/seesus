@@ -12,8 +12,9 @@ def id_sus(text):
     
     Input: a string.
     Output:
-        sdg: a list of SDGs identified in text.
-        target: a list of SDG targets identified in text.
+        sdgs: a list of SDGs identified in text.
+        targets: a list of SDG targets identified in text.
+        matches: a list of match types (direct or indirect).
     """
     if not isinstance(text, str):
         raise ValueError("Input must be a string.")
@@ -30,7 +31,7 @@ def id_sus(text):
             matches.append(match_type)
     sdgs = list(set(sdgs)) # keep unique sdgs
     targets = list(set(targets)) # keep unique targets
-    matches = list(set(matches)) # keep unique match types
+    matches = list(set(matches)) 
     return sdgs, targets, matches
 
 def cat_sus(target):
