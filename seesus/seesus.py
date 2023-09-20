@@ -24,7 +24,7 @@ def id_sus(text):
     for item in SDG_keys:
         sdg_id = item["SDG_id"]
         sdg_keywords = item["SDG_keywords"]
-        match_type = item["match_tpye"]
+        match_type = item["match_type"]
         if re.search(sdg_keywords, text, re.IGNORECASE):
             sdgs.append(sdg_id.split("_")[0])
             targets.append(sdg_id)
