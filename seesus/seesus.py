@@ -14,7 +14,8 @@ def id_sus(text):
     Parameters
     ----------
         text: str
-            Text to be analyzed. It is recommended to input one sentence rather than a lengthy paragraph.
+            Text to be analyzed. 
+            It is recommended to input one sentence rather than a lengthy paragraph.
             
     Returns
     -------
@@ -69,7 +70,8 @@ def cat_sus(target):
     Returns
     -------       
         see: dict
-            A dictionary of boolean values with social, environmental, and economic sustainability as keys.
+            A dictionary of boolean values with social, environmental, and economic sustainability 
+            as keys.
     """
     see = {"social_sustainability":0, "environmental_sustainability":0, "economic_sustainability":0}
     
