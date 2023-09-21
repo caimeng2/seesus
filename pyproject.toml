@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "seesus"
-version = "0.1.0"
+version = "1.0.0"
 authors = [
     {name = "Meng Cai", email = "mengcai24601@gmail.com"},
     {name = "Yingjie Li", email = "yingjieli.edu@gmail.com"},
@@ -16,7 +16,7 @@ authors = [
     {name = "Veronica Frans", email = "verofrans@gmail.com"},
     {name = "Yuqian Zhang", email = "zhan1364@msu.edu"}
     ]
-description = "a social, environmental, and economic sustainability classifier"
+description = "a social, environmental, and economic sustainability classifier based on the UN Sustainable Development Goals"
 readme = "README.md"
 requires-python = ">=3.7"
 license = {text = "GPL-3.0"}
