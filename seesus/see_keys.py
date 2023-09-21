@@ -1,4 +1,6 @@
-"""Classification of SDG targets into social, environmental, and economic sustainability"""
+"""
+Classification of SDG targets into social, environmental, and economic sustainability.
+"""
 
 see_keys = [['SDG1_general', '1', '0', '0'], 
             ['SDG2_general', '1', '1', '0'], 
