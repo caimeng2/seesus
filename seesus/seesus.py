@@ -4,6 +4,7 @@ and classify into social, environmental, and economic sustainability."""
 from seesus.SDG_keys import SDG_keys 
 from seesus.see_keys import see_keys 
 from seesus.SDG_desc import goal_desc, tar_desc
+
 import regex as re
 
 def id_sus(text):
@@ -17,6 +18,10 @@ def id_sus(text):
             
     Returns
     -------
+        sus: bool
+            Whether text aligns with sustainability as defined by the SDGs.
+            True: text aligns with the SDGs. 
+            False: text does not align with the SDGs.
         sdgs: list
             Goal-level SDGs identified in text.
         targets: list
@@ -31,9 +36,11 @@ def id_sus(text):
     """
     if not isinstance(text, str): # check input data type
         raise TypeError("Input must be a string.")
+        
     sdgs = []
     targets = []
     matches = []
+    
     for item in SDG_keys:
         sdg_id = item["SDG_id"]
         sdg_keywords = item["SDG_keywords"]
@@ -42,10 +49,13 @@ def id_sus(text):
             sdgs.append(sdg_id.split("_")[0])
             targets.append(sdg_id)
             matches.append(match_type)
+            
     sdgs = list(set(sdgs)) # keep unique sdgs
-    targets = list(set(targets)) # keep unique targets
+    targets = list(set(targets))
     matches = list(set(matches)) 
-    return sdgs, targets, matches
+    sus = True if sdgs else False
+    
+    return sus, sdgs, targets, matches
 
 def cat_sus(target):
     """
@@ -62,6 +72,7 @@ def cat_sus(target):
             A dictionary of boolean values with social, environmental, and economic sustainability as keys.
     """
     see = {"social_sustainability":0, "environmental_sustainability":0, "economic_sustainability":0}
+    
     for item in see_keys:
         sdg_id, soc, env, econ = item[:4]
         for i in range(len(target)):
@@ -69,7 +80,9 @@ def cat_sus(target):
                 see["social_sustainability"] += int(soc)
                 see["environmental_sustainability"] += int(env)
                 see["economic_sustainability"] += int(econ)
+                
     see = {key: True if see[key] > 0 else False for key in see} # convert to boolean values
+    
     return see
 
 def label_sdg(sdg_id):
@@ -88,11 +101,13 @@ def label_sdg(sdg_id):
             Source: https://sdgs.un.org/goals
     """
     sdg_desc = []
+    
     for item in goal_desc:
         goal_id, desc = item[:2]
         for i in range(len(sdg_id)):
             if sdg_id[i] == goal_id:
                 sdg_desc.append(desc)
+                
     return sdg_desc
 
 def label_target(target_id):
@@ -111,11 +126,13 @@ def label_target(target_id):
             Source: https://unstats.un.org/sdgs/indicators/indicators-list/
     """
     target_desc = []
+    
     for item in tar_desc:
         tar_id, desc = item[:2]
         for i in range(len(target_id)):
             if target_id[i] == tar_id:
                 target_desc.append(desc)
+                
     return target_desc
 
 class SeeSus():
@@ -124,6 +141,10 @@ class SeeSus():
     
     Attributes
     ----------
+        sus: bool
+            Whether text aligns with sustainability as defined by the SDGs.
+            True: text aligns with the SDGs. 
+            False: text does not align with the SDGs.
         sdg: list
             Goal-level SDGs identified in text.
         target: list
@@ -157,7 +178,7 @@ class SeeSus():
             text: str
                 Text to be analyzed. It is recommended to input one sentence rather than a lengthy paragraph.
         """
-        self.sdg, self.target, self.match = id_sus(text)
+        self.sus, self.sdg, self.target, self.match = id_sus(text)
         self.sdg_desc = label_sdg(self.sdg)
         self.target_desc = label_target(self.target)
         self.see = cat_sus(self.target)
@@ -182,8 +203,10 @@ class SeeSus():
         ids = list(set([item["SDG_id"] for item in SDG_keys]))
         if sdg_id not in ids: # check if sdg id is valid
             raise ValueError(f"Invalid input. Choose one in the list: {ids}")
+            
         syntax = [d for d in SDG_keys if d["SDG_id"] == sdg_id]
         print(syntax)  
+        
         return
     
     def edit_syntax(sdg_id, new_syntax, match_type="indirect"):
@@ -214,8 +237,15 @@ class SeeSus():
             raise ValueError(f"Invalid input '{sdg_id}'. Use one in the list: {ids}.")
         if match_type not in ["direct", "indirect"]:  # check if match type is valid
             raise ValueError(f"Invalid input '{match_type}'. Use 'direct' or 'indirect'. Default is 'indirect'.")
+        
+        match = 0
         for item in SDG_keys:
-            if item["SDG_id"] == sdg_id and item["match_type"] == match_type:               
+            if item["SDG_id"] == sdg_id and item["match_type"] == match_type:
+                match += 1
                 item.update({"SDG_keywords": new_syntax})
+        if match == 0: # when the direct/indirect match type does not exist
+            SDG_keys.append({"SDG_id": sdg_id,"SDG_keywords": new_syntax, "match_type": match_type})
+            
         print(f"The {match_type} match syntax of {sdg_id} has been updated.")
+        
         return
