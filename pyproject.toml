@@ -21,4 +21,8 @@ readme = "README.md"
 requires-python = ">=3.7"
 keywords = ["sustainability", "SDG", "sustainable-development-goals", "classification", "regular expressions", "text mining"]
 license = {text = "GPL-3.0"}
-dependencies = ["pytest","regex"]
+dependencies = ["regex"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+doc = ["pdoc3"]
