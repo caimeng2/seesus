@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>seesus.SDG_desc API documentation</title>
+<meta name="description" content="The United Nations description of SDGs and targets.
+Source: https://sdgs.un.org/goals, https://unstats.un.org/sdgs/indicators/indicators-list/" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>seesus.SDG_desc</code></h1>
+</header>
+<section id="section-intro">
+<p>The United Nations description of SDGs and targets.
+Source: <a href="https://sdgs.un.org/goals,">https://sdgs.un.org/goals,</a> <a href="https://unstats.un.org/sdgs/indicators/indicators-list/">https://unstats.un.org/sdgs/indicators/indicators-list/</a></p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+The United Nations description of SDGs and targets.
+Source: https://sdgs.un.org/goals, https://unstats.un.org/sdgs/indicators/indicators-list/
+&#34;&#34;&#34;
+
+goal_desc = [[&#39;SDG1&#39;, &#39;No Poverty&#39;],
+             [&#39;SDG2&#39;, &#39;Zero Hunger&#39;],
+             [&#39;SDG3&#39;, &#39;Good Health and Well-being&#39;],
+             [&#39;SDG4&#39;, &#39;Quality Education&#39;],
+             [&#39;SDG5&#39;, &#39;Gender Equality&#39;],
+             [&#39;SDG6&#39;, &#39;Clean Water and Sanitation&#39;],
+             [&#39;SDG7&#39;, &#39;Affordable and Clean Energy&#39;],
+             [&#39;SDG8&#39;, &#39;Decent Work and Economic Growth&#39;],
+             [&#39;SDG9&#39;, &#39;Industry, Innovation, and Infrastructure&#39;],
+             [&#39;SDG10&#39;, &#39;Reducing Inequality&#39;],
+             [&#39;SDG11&#39;, &#39;Sustainable Cities and Communities&#39;],
+             [&#39;SDG12&#39;, &#39;Responsible Consumption and Production&#39;],
+             [&#39;SDG13&#39;, &#39;Climate Action&#39;],
+             [&#39;SDG14&#39;, &#39;Life Below Water&#39;],
+             [&#39;SDG15&#39;, &#39;Life On Land&#39;],
+             [&#39;SDG16&#39;, &#39;Peace, Justice, and Strong Institutions&#39;],
+             [&#39;SDG17&#39;, &#39;Partnerships for the Goals&#39;]]
+
+tar_desc = [[&#39;SDG1_general&#39;, &#39;End poverty in all its forms everywhere&#39;],
+            [&#39;SDG2_general&#39;, &#39;End hunger, achieve food security and improved nutrition and promote sustainable agriculture&#39;],
+            [&#39;SDG3_general&#39;, &#39;Ensure healthy lives and promote well-being for all at all ages&#39;],
+            [&#39;SDG4_general&#39;, &#39;Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all&#39;],
+            [&#39;SDG5_general&#39;, &#39;Achieve gender equality and empower all women and girls&#39;],
+            [&#39;SDG6_general&#39;, &#39;Ensure availability and sustainable management of water and sanitation for all&#39;],
+            [&#39;SDG7_general&#39;, &#39;Ensure access to affordable, reliable, sustainable and modern energy for all&#39;],
+            [&#39;SDG8_general&#39;, &#39;Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all&#39;],
+            [&#39;SDG9_general&#39;, &#39;Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation&#39;],
+            [&#39;SDG10_general&#39;, &#39;Reduce inequality within and among countries&#39;],
+            [&#39;SDG11_general&#39;, &#39;Make cities and human settlements inclusive, safe, resilient and sustainable&#39;],
+            [&#39;SDG12_general&#39;, &#39;Ensure sustainable consumption and production patterns&#39;],
+            [&#39;SDG13_general&#39;, &#39;Take urgent action to combat climate change and its impacts&#39;],
+            [&#39;SDG14_general&#39;, &#39;Conserve and sustainably use the oceans, seas and marine resources for sustainable development&#39;],
+            [&#39;SDG15_general&#39;, &#39;Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss&#39;],
+            [&#39;SDG16_general&#39;, &#39;Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels&#39;],
+            [&#39;SDG17_general&#39;, &#39;Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development&#39;],
+            [&#39;SDG1_1&#39;, &#39;By 2030, eradicate extreme poverty for all people everywhere, currently measured as people living on less than $1.25 a day&#39;],
+            [&#39;SDG1_2&#39;, &#39;By 2030, reduce at least by half the proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions&#39;],
+            [&#39;SDG1_3&#39;, &#39;Implement nationally appropriate social protection systems and measures for all, including floors, and by 2030 achieve substantial coverage of the poor and the vulnerable&#39;],
+            [&#39;SDG1_4&#39;, &#39;By 2030, ensure that all men and women, in particular the poor and the vulnerable, have equal rights to economic resources, as well as access to basic services, ownership and control over land and other forms of property, inheritance, natural resources, appropriate new technology and financial services, including microfinance&#39;],
+            [&#39;SDG1_5&#39;, &#39;By 2030, build the resilience of the poor and those in vulnerable situations and reduce their exposure and vulnerability to climate-related extreme events and other economic, social and environmental shocks and disasters&#39;],
+            [&#39;SDG1_a&#39;, &#39;Ensure significant mobilization of resources from a variety of sources, including through enhanced development cooperation, in order to provide adequate and predictable means for developing countries, in particular least developed countries, to implement programmes and policies to end poverty in all its dimensions&#39;],
+            [&#39;SDG1_b&#39;, &#39;Create sound policy frameworks at the national, regional and international levels, based on pro-poor and gender-sensitive development strategies, to support accelerated investment in poverty eradication actions&#39;],
+            [&#39;SDG2_1&#39;, &#39;By 2030, end hunger and ensure access by all people, in particular the poor and people in vulnerable situations, including infants, to safe, nutritious and sufficient food all year round&#39;],
+            [&#39;SDG2_2&#39;, &#39;By 2030, end all forms of malnutrition, including achieving, by 2025, the internationally agreed targets on stunting and wasting in children under 5?years of age, and address the nutritional needs of adolescent girls, pregnant and lactating women and older persons&#39;],
+            [&#39;SDG2_3&#39;, &#39;By 2030, double the agricultural productivity and incomes of small-scale food producers, in particular women, indigenous peoples, family farmers, pastoralists and fishers, including through secure and equal access to land, other productive resources and inputs, knowledge, financial services, markets and opportunities for value addition and non-farm employment&#39;],
+            [&#39;SDG2_4&#39;, &#39;By 2030, ensure sustainable food production systems and implement resilient agricultural practices that increase productivity and production, that help maintain ecosystems, that strengthen capacity for adaptation to climate change, extreme weather, drought, flooding and other disasters and that progressively improve land and soil quality&#39;],
+            [&#39;SDG2_5&#39;, &#39;By 2020, maintain the genetic diversity of seeds, cultivated plants and farmed and domesticated animals and their related wild species, including through soundly managed and diversified seed and plant banks at the national, regional and international levels, and promote access to and fair and equitable sharing of benefits arising from the utilization of genetic resources and associated traditional knowledge, as internationally agreed&#39;],
+            [&#39;SDG2_a&#39;, &#39;Increase investment, including through enhanced international cooperation, in rural infrastructure, agricultural research and extension services, technology development and plant and livestock gene banks in order to enhance agricultural productive capacity in developing countries, in particular least developed countries&#39;],
+            [&#39;SDG2_b&#39;, &#39;Correct and prevent trade restrictions and distortions in world agricultural markets, including through the parallel elimination of all forms of agricultural export subsidies and all export measures with equivalent effect, in accordance with the mandate of the Doha Development Round&#39;],
+            [&#39;SDG2_c&#39;, &#39;Adopt measures to ensure the proper functioning of food commodity markets and their derivatives and facilitate timely access to market information, including on food reserves, in order to help limit extreme food price volatility&#39;],
+            [&#39;SDG3_1&#39;, &#39;By 2030, reduce the global maternal mortality ratio to less than 70 per 100,000 live births&#39;],
+            [&#39;SDG3_2&#39;, &#39;By 2030, end preventable deaths of newborns and children under 5?years of age, with all countries aiming to reduce neonatal mortality to at least as low as 12 per 1,000 live births and under?5 mortality to at least as low as 25 per 1,000 live births&#39;],
+            [&#39;SDG3_3&#39;, &#39;By 2030, end the epidemics of AIDS, tuberculosis, malaria and neglected tropical diseases and combat hepatitis, water-borne diseases and other communicable diseases&#39;],
+            [&#39;SDG3_4&#39;, &#39;By 2030, reduce by one third premature mortality from non-communicable diseases through prevention and treatment and promote mental health and well-being&#39;],
+            [&#39;SDG3_5&#39;, &#39;Strengthen the prevention and treatment of substance abuse, including narcotic drug abuse and harmful use of alcohol&#39;],
+            [&#39;SDG3_6&#39;, &#39;By 2020, halve the number of global deaths and injuries from road traffic accidents&#39;],
+            [&#39;SDG3_7&#39;, &#39;By 2030, ensure universal access to sexual and reproductive health-care services, including for family planning, information and education, and the integration of reproductive health into national strategies and programmes&#39;],
+            [&#39;SDG3_8&#39;, &#39;Achieve universal health coverage, including financial risk protection, access to quality essential health-care services and access to safe, effective, quality and affordable essential medicines and vaccines for all&#39;],
+            [&#39;SDG3_9&#39;, &#39;By 2030, substantially reduce the number of deaths and illnesses from hazardous chemicals and air, water and soil pollution and contamination&#39;],
+            [&#39;SDG3_a&#39;, &#39;Strengthen the implementation of the World Health Organization Framework Convention on Tobacco Control in all countries, as appropriate&#39;],
+            [&#39;SDG3_b&#39;, &#39;Support the research and development of vaccines and medicines for the communicable and non?communicable diseases that primarily affect developing countries, provide access to affordable essential medicines and vaccines, in accordance with the Doha Declaration on the TRIPS Agreement and Public Health, which affirms the right of developing countries to use to the full the provisions in the Agreement on Trade-Related Aspects of Intellectual Property Rights regarding flexibilities to protect public health, and, in particular, provide access to medicines for all&#39;],
+            [&#39;SDG3_c&#39;, &#39;Substantially increase health financing and the recruitment, development, training and retention of the health workforce in developing countries, especially in least developed countries and small island developing States&#39;],
+            [&#39;SDG3_d&#39;, &#39;Strengthen the capacity of all countries, in particular developing countries, for early warning, risk reduction and management of national and global health risks&#39;],
+            [&#39;SDG4_1&#39;, &#39;By 2030, ensure that all girls and boys complete free, equitable and quality primary and secondary education leading to relevant and effective learning outcomes&#39;],
+            [&#39;SDG4_2&#39;, &#39;By 2030, ensure that all girls and boys have access to quality early childhood development, care and pre?primary education so that they are ready for primary education&#39;],
+            [&#39;SDG4_3&#39;, &#39;By 2030, ensure equal access for all women and men to affordable and quality technical, vocational and tertiary education, including university&#39;],
+            [&#39;SDG4_4&#39;, &#39;By 2030, substantially increase the number of youth and adults who have relevant skills, including technical and vocational skills, for employment, decent jobs and entrepreneurship&#39;],
+            [&#39;SDG4_5&#39;, &#39;By 2030, eliminate gender disparities in education and ensure equal access to all levels of education and vocational training for the vulnerable, including persons with disabilities, indigenous peoples and children in vulnerable situations&#39;],
+            [&#39;SDG4_6&#39;, &#39;By 2030, ensure that all youth and a substantial proportion of adults, both men and women, achieve literacy and numeracy&#39;],
+            [&#39;SDG4_7&#39;, &#39;By 2030, ensure that all learners acquire the knowledge and skills needed to promote sustainable development, including, among others, through education for sustainable development and sustainable lifestyles, human rights, gender equality, promotion of a culture of peace and non-violence, global citizenship and appreciation of cultural diversity and of culture??s contribution to sustainable development&#39;],
+            [&#39;SDG4_a&#39;, &#39;Build and upgrade education facilities that are child, disability and gender sensitive and provide safe, non-violent, inclusive and effective learning environments for all&#39;],
+            [&#39;SDG4_b&#39;, &#39;By 2020, substantially expand globally the number of scholarships available to developing countries, in particular least developed countries, small island developing States and African countries, for enrolment in higher education, including vocational training and information and communications technology, technical, engineering and scientific programmes, in developed countries and other developing countries&#39;],
+            [&#39;SDG4_c&#39;, &#39;By 2030, substantially increase the supply of qualified teachers, including through international cooperation for teacher training in developing countries, especially least developed countries and small island developing States&#39;],
+            [&#39;SDG5_1&#39;, &#39;End all forms of discrimination against all women and girls everywhere&#39;],
+            [&#39;SDG5_2&#39;, &#39;Eliminate all forms of violence against all women and girls in the public and private spheres, including trafficking and sexual and other types of exploitation&#39;],
+            [&#39;SDG5_3&#39;, &#39;Eliminate all harmful practices, such as child, early and forced marriage and female genital mutilation&#39;],
+            [&#39;SDG5_4&#39;, &#39;Recognize and value unpaid care and domestic work through the provision of public services, infrastructure and social protection policies and the promotion of shared responsibility within the household and the family as nationally appropriate&#39;],
+            [&#39;SDG5_5&#39;, &#39;Ensure women??s full and effective participation and equal opportunities for leadership at all levels of decision-making in political, economic and public life&#39;],
+            [&#39;SDG5_6&#39;, &#39;Ensure universal access to sexual and reproductive health and reproductive rights as agreed in accordance with the Programme of Action of the International Conference on Population and Development and the Beijing Platform for Action and the outcome documents of their review conferences&#39;],
+            [&#39;SDG5_a&#39;, &#39;Undertake reforms to give women equal rights to economic resources, as well as access to ownership and control over land and other forms of property, financial services, inheritance and natural resources, in accordance with national laws&#39;],
+            [&#39;SDG5_b&#39;, &#39;Enhance the use of enabling technology, in particular information and communications technology, to promote the empowerment of women&#39;],
+            [&#39;SDG5_c&#39;, &#39;Adopt and strengthen sound policies and enforceable legislation for the promotion of gender equality and the empowerment of all women and girls at all levels&#39;],
+            [&#39;SDG6_1&#39;, &#39;By 2030, achieve universal and equitable access to safe and affordable drinking water for all&#39;],
+            [&#39;SDG6_2&#39;, &#39;By 2030, achieve access to adequate and equitable sanitation and hygiene for all and end open defecation, paying special attention to the needs of women and girls and those in vulnerable situations&#39;],
+            [&#39;SDG6_3&#39;, &#39;By 2030, improve water quality by reducing pollution, eliminating dumping and minimizing release of hazardous chemicals and materials, halving the proportion of untreated wastewater and substantially increasing recycling and safe reuse globally&#39;],
+            [&#39;SDG6_4&#39;, &#39;By 2030, substantially increase water-use efficiency across all sectors and ensure sustainable withdrawals and supply of freshwater to address water scarcity and substantially reduce the number of people suffering from water scarcity&#39;],
+            [&#39;SDG6_5&#39;, &#39;By 2030, implement integrated water resources management at all levels, including through transboundary cooperation as appropriate&#39;],
+            [&#39;SDG6_6&#39;, &#39;By 2020, protect and restore water-related ecosystems, including mountains, forests, wetlands, rivers, aquifers and lakes&#39;],
+            [&#39;SDG6_a&#39;, &#39;By 2030, expand international cooperation and capacity-building support to developing countries in water- and sanitation-related activities and programmes, including water harvesting, desalination, water efficiency, wastewater treatment, recycling and reuse technologies&#39;],
+            [&#39;SDG6_b&#39;, &#39;Support and strengthen the participation of local communities in improving water and sanitation management&#39;],
+            [&#39;SDG7_1&#39;, &#39;By 2030, ensure universal access to affordable, reliable and modern energy services&#39;],
+            [&#39;SDG7_2&#39;, &#39;By 2030, increase substantially the share of renewable energy in the global energy mix&#39;],
+            [&#39;SDG7_3&#39;, &#39;By 2030, double the global rate of improvement in energy efficiency&#39;],
+            [&#39;SDG7_a&#39;, &#39;By 2030, enhance international cooperation to facilitate access to clean energy research and technology, including renewable energy, energy efficiency and advanced and cleaner fossil-fuel technology, and promote investment in energy infrastructure and clean energy technology&#39;],
+            [&#39;SDG7_b&#39;, &#39;By 2030, expand infrastructure and upgrade technology for supplying modern and sustainable energy services for all in developing countries, in particular least developed countries, small island developing States and landlocked developing countries, in accordance with their respective programmes of support&#39;],
+            [&#39;SDG8_1&#39;, &#39;Sustain per capita economic growth in accordance with national circumstances and, in particular, at least 7?per?cent gross domestic product growth per annum in the least developed countries&#39;],
+            [&#39;SDG8_2&#39;, &#39;Achieve higher levels of economic productivity through diversification, technological upgrading and innovation, including through a focus on high-value added and labour-intensive sectors&#39;],
+            [&#39;SDG8_3&#39;, &#39;Promote development-oriented policies that support productive activities, decent job creation, entrepreneurship, creativity and innovation, and encourage the formalization and growth of micro-, small- and medium-sized enterprises, including through access to financial services&#39;],
+            [&#39;SDG8_4&#39;, &#39;Improve progressively, through 2030, global resource efficiency in consumption and production and endeavour to decouple economic growth from environmental degradation, in accordance with the 10?Year Framework of Programmes on Sustainable Consumption and Production, with developed countries taking the lead&#39;],
+            [&#39;SDG8_5&#39;, &#39;By 2030, achieve full and productive employment and decent work for all women and men, including for young people and persons with disabilities, and equal pay for work of equal value&#39;],
+            [&#39;SDG8_6&#39;, &#39;By 2020, substantially reduce the proportion of youth not in employment, education or training&#39;],
+            [&#39;SDG8_7&#39;, &#39;Take immediate and effective measures to eradicate forced labour, end modern slavery and human trafficking and secure the prohibition and elimination of the worst forms of child labour, including recruitment and use of child soldiers, and by 2025 end child labour in all its forms &#39;],
+            [&#39;SDG8_8&#39;, &#39;Protect labour rights and promote safe and secure working environments for all workers, including migrant workers, in particular women migrants, and those in precarious employment&#39;],
+            [&#39;SDG8_9&#39;, &#39;By 2030, devise and implement policies to promote sustainable tourism that creates jobs and promotes local culture and products&#39;],
+            [&#39;SDG8_1&#39;, &#39;Strengthen the capacity of domestic financial institutions to encourage and expand access to banking, insurance and financial services for all&#39;],
+            [&#39;SDG8_a&#39;, &#39;Increase Aid for Trade support for developing countries, in particular least developed countries, including through the Enhanced Integrated Framework for Trade-related Technical Assistance to Least Developed Countries&#39;],
+            [&#39;SDG8_b&#39;, &#39;By 2020, develop and operationalize a global strategy for youth employment and implement the Global Jobs Pact of the International Labour Organization&#39;],
+            [&#39;SDG9_1&#39;, &#39;Develop quality, reliable, sustainable and resilient infrastructure, including regional and transborder infrastructure, to support economic development and human well-being, with a focus on affordable and equitable access for all&#39;],
+            [&#39;SDG9_2&#39;, &#39;Promote inclusive and sustainable industrialization and, by 2030, significantly raise industry??s share of employment and gross domestic product, in line with national circumstances, and double its share in least developed countries&#39;],
+            [&#39;SDG9_3&#39;, &#39;Increase the access of small-scale industrial and other enterprises, in particular in developing countries, to financial services, including affordable credit, and their integration into value chains and markets&#39;],
+            [&#39;SDG9_4&#39;, &#39;By 2030, upgrade infrastructure and retrofit industries to make them sustainable, with increased resource-use efficiency and greater adoption of clean and environmentally sound technologies and industrial processes, with all countries taking action in accordance with their respective capabilities&#39;],
+            [&#39;SDG9_5&#39;, &#39;Enhance scientific research, upgrade the technological capabilities of industrial sectors in all countries, in particular developing countries, including, by 2030, encouraging innovation and substantially increasing the number of research and development workers per 1?million people and public and private research and development spending&#39;],
+            [&#39;SDG9_a&#39;, &#39;Facilitate sustainable and resilient infrastructure development in developing countries through enhanced financial, technological and technical support to African countries, least developed countries, landlocked developing countries and small island developing States&#39;],
+            [&#39;SDG9_b&#39;, &#39;Support domestic technology development, research and innovation in developing countries, including by ensuring a conducive policy environment for, inter alia, industrial diversification and value addition to commodities&#39;],
+            [&#39;SDG9_c&#39;, &#39;Significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020&#39;],
+            [&#39;SDG10_1&#39;, &#39;By 2030, progressively achieve and sustain income growth of the bottom 40?per?cent of the population at a rate higher than the national average&#39;],
+            [&#39;SDG10_2&#39;, &#39;By 2030, empower and promote the social, economic and political inclusion of all, irrespective of age, sex, disability, race, ethnicity, origin, religion or economic or other status&#39;],
+            [&#39;SDG10_3&#39;, &#39;Ensure equal opportunity and reduce inequalities of outcome, including by eliminating discriminatory laws, policies and practices and promoting appropriate legislation, policies and action in this regard&#39;],
+            [&#39;SDG10_4&#39;, &#39;Adopt policies, especially fiscal, wage and social protection policies, and progressively achieve greater equality&#39;],
+            [&#39;SDG10_5&#39;, &#39;Improve the regulation and monitoring of global financial markets and institutions and strengthen the implementation of such regulations&#39;],
+            [&#39;SDG10_6&#39;, &#39;Ensure enhanced representation and voice for developing countries in decision-making in global international economic and financial institutions in order to deliver more effective, credible, accountable and legitimate institutions&#39;],
+            [&#39;SDG10_7&#39;, &#39;Facilitate orderly, safe, regular and responsible migration and mobility of people, including through the implementation of planned and well-managed migration policies&#39;],
+            [&#39;SDG10_a&#39;, &#39;Implement the principle of special and differential treatment for developing countries, in particular least developed countries, in accordance with World Trade Organization agreements&#39;],
+            [&#39;SDG10_b&#39;, &#39;Encourage official development assistance and financial flows, including foreign direct investment, to States where the need is greatest, in particular least developed countries, African countries, small island developing States and landlocked developing countries, in accordance with their national plans and programmes&#39;],
+            [&#39;SDG10_c&#39;, &#39;By 2030, reduce to less than 3?per?cent the transaction costs of migrant remittances and eliminate remittance corridors with costs higher than 5?per?cent&#39;],
+            [&#39;SDG11_1&#39;, &#39;By 2030, ensure access for all to adequate, safe and affordable housing and basic services and upgrade slums&#39;],
+            [&#39;SDG11_2&#39;, &#39;By 2030, provide access to safe, affordable, accessible and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities and older persons&#39;],
+            [&#39;SDG11_3&#39;, &#39;By 2030, enhance inclusive and sustainable urbanization and capacity for participatory, integrated and sustainable human settlement planning and management in all countries&#39;],
+            [&#39;SDG11_4&#39;, &#39;Strengthen efforts to protect and safeguard the world??s cultural and natural heritage&#39;],
+            [&#39;SDG11_5&#39;, &#39;By 2030, significantly reduce the number of deaths and the number of people affected and substantially decrease the direct economic losses relative to global gross domestic product caused by disasters, including water-related disasters, with a focus on protecting the poor and people in vulnerable situations&#39;],
+            [&#39;SDG11_6&#39;, &#39;By 2030, reduce the adverse per capita environmental impact of cities, including by paying special attention to air quality and municipal and other waste management&#39;],
+            [&#39;SDG11_7&#39;, &#39;By 2030, provide universal access to safe, inclusive and accessible, green and public spaces, in particular for women and children, older persons and persons with disabilities&#39;],
+            [&#39;SDG11_a&#39;, &#39;Support positive economic, social and environmental links between urban, peri-urban and rural areas by strengthening national and regional development planning&#39;],
+            [&#39;SDG11_b&#39;, &#39;By 2020, substantially increase the number of cities and human settlements adopting and implementing integrated policies and plans towards inclusion, resource efficiency, mitigation and adaptation to climate change, resilience to disasters, and develop and implement, in line with the Sendai Framework for Disaster Risk Reduction 2015?C2030, holistic disaster risk management at all levels&#39;],
+            [&#39;SDG11_c&#39;, &#39;Support least developed countries, including through financial and technical assistance, in building sustainable and resilient buildings utilizing local materials&#39;],
+            [&#39;SDG12_1&#39;, &#39;Implement the 10?Year Framework of Programmes on Sustainable Consumption and Production Patterns, all countries taking action, with developed countries taking the lead, taking into account the development and capabilities of developing countries&#39;],
+            [&#39;SDG12_2&#39;, &#39;By 2030, achieve the sustainable management and efficient use of natural resources&#39;],
+            [&#39;SDG12_3&#39;, &#39;By 2030, halve per capita global food waste at the retail and consumer levels and reduce food losses along production and supply chains, including post-harvest losses&#39;],
+            [&#39;SDG12_4&#39;, &#39;By 2020, achieve the environmentally sound management of chemicals and all wastes throughout their life cycle, in accordance with agreed international frameworks, and significantly reduce their release to air, water and soil in order to minimize their adverse impacts on human health and the environment&#39;],
+            [&#39;SDG12_5&#39;, &#39;By 2030, substantially reduce waste generation through prevention, reduction, recycling and reuse&#39;],
+            [&#39;SDG12_6&#39;, &#39;Encourage companies, especially large and transnational companies, to adopt sustainable practices and to integrate sustainability information into their reporting cycle&#39;],
+            [&#39;SDG12_7&#39;, &#39;Promote public procurement practices that are sustainable, in accordance with national policies and priorities&#39;],
+            [&#39;SDG12_8&#39;, &#39;By 2030, ensure that people everywhere have the relevant information and awareness for sustainable development and lifestyles in harmony with nature&#39;],
+            [&#39;SDG12_a&#39;, &#39;Support developing countries to strengthen their scientific and technological capacity to move towards more sustainable patterns of consumption and production&#39;],
+            [&#39;SDG12_b&#39;, &#39;Develop and implement tools to monitor sustainable development impacts for sustainable tourism that creates jobs and promotes local culture and products&#39;],
+            [&#39;SDG12_c&#39;, &#39;Rationalize inefficient fossil-fuel subsidies that encourage wasteful consumption by removing market distortions, in accordance with national circumstances, including by restructuring taxation and phasing out those harmful subsidies, where they exist, to reflect their environmental impacts, taking fully into account the specific needs and conditions of developing countries and minimizing the possible adverse impacts on their development in a manner that protects the poor and the affected communities&#39;],
+            [&#39;SDG13_1&#39;, &#39;Strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries&#39;],
+            [&#39;SDG13_2&#39;, &#39;Integrate climate change measures into national policies, strategies and planning&#39;],
+            [&#39;SDG13_3&#39;, &#39;Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning&#39;],
+            [&#39;SDG13_a&#39;, &#39;Implement the commitment undertaken by developed-country parties to the United Nations Framework Convention on Climate Change to a goal of mobilizing jointly $100?billion annually by 2020 from all sources to address the needs of developing countries in the context of meaningful mitigation actions and transparency on implementation and fully operationalize the Green Climate Fund through its capitalization as soon as possible&#39;],
+            [&#39;SDG13_b&#39;, &#39;Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities&#39;],
+            [&#39;SDG14_1&#39;, &#39;By 2025, prevent and significantly reduce marine pollution of all kinds, in particular from land-based activities, including marine debris and nutrient pollution&#39;],
+            [&#39;SDG14_2&#39;, &#39;By 2020, sustainably manage and protect marine and coastal ecosystems to avoid significant adverse impacts, including by strengthening their resilience, and take action for their restoration in order to achieve healthy and productive oceans&#39;],
+            [&#39;SDG14_3&#39;, &#39;Minimize and address the impacts of ocean acidification, including through enhanced scientific cooperation at all levels&#39;],
+            [&#39;SDG14_4&#39;, &#39;By 2020, effectively regulate harvesting and end overfishing, illegal, unreported and unregulated fishing and destructive fishing practices and implement science-based management plans, in order to restore fish stocks in the shortest time feasible, at least to levels that can produce maximum sustainable yield as determined by their biological characteristics&#39;],
+            [&#39;SDG14_5&#39;, &#39;By 2020, conserve at least 10?per?cent of coastal and marine areas, consistent with national and international law and based on the best available scientific information&#39;],
+            [&#39;SDG14_6&#39;, &#39;By 2020, prohibit certain forms of fisheries subsidies which contribute to overcapacity and overfishing, eliminate subsidies that contribute to illegal, unreported and unregulated fishing and refrain from introducing new such subsidies, recognizing that appropriate and effective special and differential treatment for developing and least developed countries should be an integral part of the World Trade Organization fisheries subsidies negotiation3&#39;],
+            [&#39;SDG14_7&#39;, &#39;By 2030, increase the economic benefits to small island developing States and least developed countries from the sustainable use of marine resources, including through sustainable management of fisheries, aquaculture and tourism&#39;],
+            [&#39;SDG14_a&#39;, &#39;Increase scientific knowledge, develop research capacity and transfer marine technology, taking into account the Intergovernmental Oceanographic Commission Criteria and Guidelines on the Transfer of Marine Technology, in order to improve ocean health and to enhance the contribution of marine biodiversity to the development of developing countries, in particular small island developing States and least developed countries&#39;],
+            [&#39;SDG14_b&#39;, &#39;Provide access for small-scale artisanal fishers to marine resources and markets&#39;],
+            [&#39;SDG14_c&#39;, &#39;Enhance the conservation and sustainable use of oceans and their resources by implementing international law as reflected in the United Nations Convention on the Law of the Sea, which provides the legal framework for the conservation and sustainable use of oceans and their resources, as recalled in paragraph?158 of ??The future we want??&#39;],
+            [&#39;SDG15_1&#39;, &#39;By 2020, ensure the conservation, restoration and sustainable use of terrestrial and inland freshwater ecosystems and their services, in particular forests, wetlands, mountains and drylands, in line with obligations under international agreements&#39;],
+            [&#39;SDG15_2&#39;, &#39;By 2020, promote the implementation of sustainable management of all types of forests, halt deforestation, restore degraded forests and substantially increase afforestation and reforestation globally&#39;],
+            [&#39;SDG15_3&#39;, &#39;By 2030, combat desertification, restore degraded land and soil, including land affected by desertification, drought and floods, and strive to achieve a land degradation-neutral world&#39;],
+            [&#39;SDG15_4&#39;, &#39;By 2030, ensure the conservation of mountain ecosystems, including their biodiversity, in order to enhance their capacity to provide benefits that are essential for sustainable development&#39;],
+            [&#39;SDG15_5&#39;, &#39;Take urgent and significant action to reduce the degradation of natural habitats, halt the loss of biodiversity and, by 2020, protect and prevent the extinction of threatened species&#39;],
+            [&#39;SDG15_6&#39;, &#39;Promote fair and equitable sharing of the benefits arising from the utilization of genetic resources and promote appropriate access to such resources, as internationally agreed&#39;],
+            [&#39;SDG15_7&#39;, &#39;Take urgent action to end poaching and trafficking of protected species of flora and fauna and address both demand and supply of illegal wildlife products&#39;],
+            [&#39;SDG15_8&#39;, &#39;By 2020, introduce measures to prevent the introduction and significantly reduce the impact of invasive alien species on land and water ecosystems and control or eradicate the priority species&#39;],
+            [&#39;SDG15_9&#39;, &#39;By 2020, integrate ecosystem and biodiversity values into national and local planning, development processes, poverty reduction strategies and accounts&#39;],
+            [&#39;SDG15_a&#39;, &#39;Mobilize and significantly increase financial resources from all sources to conserve and sustainably use biodiversity and ecosystems&#39;],
+            [&#39;SDG15_b&#39;, &#39;Mobilize significant resources from all sources and at all levels to finance sustainable forest management and provide adequate incentives to developing countries to advance such management, including for conservation and reforestation&#39;],
+            [&#39;SDG15_c&#39;, &#39;Enhance global support for efforts to combat poaching and trafficking of protected species, including by increasing the capacity of local communities to pursue sustainable livelihood opportunities&#39;],
+            [&#39;SDG16_1&#39;, &#39;Significantly reduce all forms of violence and related death rates everywhere&#39;],
+            [&#39;SDG16_2&#39;, &#39;End abuse, exploitation, trafficking and all forms of violence against and torture of children&#39;],
+            [&#39;SDG16_3&#39;, &#39;Promote the rule of law at the national and international levels and ensure equal access to justice for all&#39;],
+            [&#39;SDG16_4&#39;, &#39;By 2030, significantly reduce illicit financial and arms flows, strengthen the recovery and return of stolen assets and combat all forms of organized crime&#39;],
+            [&#39;SDG16_5&#39;, &#39;Substantially reduce corruption and bribery in all their forms&#39;],
+            [&#39;SDG16_6&#39;, &#39;Develop effective, accountable and transparent institutions at all levels&#39;],
+            [&#39;SDG16_7&#39;, &#39;Ensure responsive, inclusive, participatory and representative decision-making at all levels&#39;],
+            [&#39;SDG16_8&#39;, &#39;Broaden and strengthen the participation of developing countries in the institutions of global governance&#39;],
+            [&#39;SDG16_9&#39;, &#39;By 2030, provide legal identity for all, including birth registration&#39;],
+            [&#39;SDG16_1&#39;, &#39;Ensure public access to information and protect fundamental freedoms, in accordance with national legislation and international agreements&#39;],
+            [&#39;SDG16_a&#39;, &#39;Strengthen relevant national institutions, including through international cooperation, for building capacity at all levels, in particular in developing countries, to prevent violence and combat terrorism and crime&#39;],
+            [&#39;SDG16_b&#39;, &#39;Promote and enforce non-discriminatory laws and policies for sustainable development&#39;],
+            [&#39;SDG17_1&#39;, &#39;Strengthen domestic resource mobilization, including through international support to developing countries, to improve domestic capacity for tax and other revenue collection&#39;],
+            [&#39;SDG17_2&#39;, &#39;Developed countries to implement fully their official development assistance commitments, including the commitment by many developed countries to achieve the target of 0.7?per?cent of gross national income for official development assistance (ODA/GNI) to developing countries and 0.15 to 0.20?per?cent of ODA/GNI to least developed countries; ODA providers are encouraged to consider setting a target to provide at least 0.20?per?cent of ODA/GNI to least developed countries&#39;],
+            [&#39;SDG17_3&#39;, &#39;Mobilize additional financial resources for developing countries from multiple sources&#39;],
+            [&#39;SDG17_4&#39;, &#39;Assist developing countries in attaining long-term debt sustainability through coordinated policies aimed at fostering debt financing, debt relief and debt restructuring, as appropriate, and address the external debt of highly indebted poor countries to reduce debt distress&#39;],
+            [&#39;SDG17_5&#39;, &#39;Adopt and implement investment promotion regimes for least developed countries&#39;],
+            [&#39;SDG17_6&#39;, &#39;Enhance North-South, South-South and triangular regional and international cooperation on and access to science, technology and innovation and enhance knowledge-sharing on mutually agreed terms, including through improved coordination among existing mechanisms, in particular at the United Nations level, and through a global technology facilitation mechanism&#39;],
+            [&#39;SDG17_7&#39;, &#39;Promote the development, transfer, dissemination and diffusion of environmentally sound technologies to developing countries on favourable terms, including on concessional and preferential terms, as mutually agreed&#39;],
+            [&#39;SDG17_8&#39;, &#39;Fully operationalize the technology bank and science, technology and innovation capacity-building mechanism for least developed countries by 2017 and enhance the use of enabling technology, in particular information and communications technology&#39;],
+            [&#39;SDG17_9&#39;, &#39;Enhance international support for implementing effective and targeted capacity-building in developing countries to support national plans to implement all the Sustainable Development Goals, including through North-South, South-South and triangular cooperation&#39;],
+            [&#39;SDG17_1&#39;, &#39;Promote a universal, rules-based, open, non?discriminatory and equitable multilateral trading system under the World Trade Organization, including through the conclusion of negotiations under its Doha Development Agenda&#39;],
+            [&#39;SDG17_11&#39;, &#39;Significantly increase the exports of developing countries, in particular with a view to doubling the least developed countries?? share of global exports by 2020&#39;],
+            [&#39;SDG17_12&#39;, &#39;Realize timely implementation of duty-free and quota-free market access on a lasting basis for all least developed countries, consistent with World Trade Organization decisions, including by ensuring that preferential rules of origin applicable to imports from least developed countries are transparent and simple, and contribute to facilitating market access&#39;],
+            [&#39;SDG17_13&#39;, &#39;Enhance global macroeconomic stability, including through policy coordination and policy coherence&#39;],
+            [&#39;SDG17_14&#39;, &#39;Enhance policy coherence for sustainable development&#39;],
+            [&#39;SDG17_15&#39;, &#39;Respect each country??s policy space and leadership to establish and implement policies for poverty eradication and sustainable development&#39;],
+            [&#39;SDG17_16&#39;, &#39;Enhance the Global Partnership for Sustainable Development, complemented by multi-stakeholder partnerships that mobilize and share knowledge, expertise, technology and financial resources, to support the achievement of the Sustainable Development Goals in all countries, in particular developing countries&#39;],
+            [&#39;SDG17_17&#39;, &#39;Encourage and promote effective public, public-private and civil society partnerships, building on the experience and resourcing strategies of partnerships&#39;],
+            [&#39;SDG17_18&#39;, &#39;By 2020, enhance capacity-building support to developing countries, including for least developed countries and small island developing States, to increase significantly the availability of high-quality, timely and reliable data disaggregated by income, gender, age, race, ethnicity, migratory status, disability, geographic location and other characteristics relevant in national contexts&#39;],
+            [&#39;SDG17_19&#39;, &#39;By 2030, build on existing initiatives to develop measurements of progress on sustainable development that complement gross domestic product, and support statistical capacity-building in developing countries&#39;]]</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="seesus" href="index.html">seesus</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
