@@ -167,8 +167,6 @@ class SeeSus():
 
     def __init__(self, text):
         """
-        Initialize attributes.
-
         Parameters
         ----------
         text: str
