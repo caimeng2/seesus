@@ -1,5 +1,5 @@
 """
-The United Nations description of SDGs and targets
+The United Nations description of SDGs and targets.
 Source: https://sdgs.un.org/goals, https://unstats.un.org/sdgs/indicators/indicators-list/
 """
 

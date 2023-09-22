@@ -13,27 +13,27 @@ def id_sus(text):
 
     Parameters
     ----------
-        text: str
-            Text to be analyzed.
-            It is recommended to input one sentence rather than a lengthy paragraph.
+    text: str
+        Text to be analyzed.
+        It is recommended to input one sentence rather than a lengthy paragraph.
 
     Returns
     -------
-        sus: bool
-            Whether text aligns with sustainability as defined by the SDGs.
-            True: text aligns with the SDGs.
-            False: text does not align with the SDGs.
-        sdgs: list
-            Goal-level SDGs identified in text.
-        targets: list
-            SDG targets identified in text.
-        matches: a list
-            Match types, either "direct" (e.g., "no poverty" matches SDG1: No Poverty)
-            or "indirect" (e.g., "no more starving" matches SDG2: Zero Hunger).
+    sus: bool
+        Whether text aligns with sustainability as defined by the SDGs.
+        True: text aligns with the SDGs.
+        False: text does not align with the SDGs.
+    sdgs: list
+        Goal-level SDGs identified in text.
+    targets: list
+        SDG targets identified in text.
+    matches: a list
+        Match types, either "direct" (e.g., "no poverty" matches SDG1: No Poverty)
+        or "indirect" (e.g., "no more starving" matches SDG2: Zero Hunger).
 
     Raises
     ------
-        TypeError: if text is not a string.
+    TypeError: if text is not a string.
     """
     if not isinstance(text, str): # check input data type
         raise TypeError("Input must be a string.")
@@ -64,14 +64,14 @@ def cat_sus(target):
 
     Parameters
     ----------
-        target: list
-            SDG targets.
+    target: list
+        SDG targets.
 
     Returns
     -------
-        see: dict
-            A dictionary of boolean values with social, environmental, and economic sustainability
-            as keys.
+    see: dict
+        A dictionary of boolean values with social, environmental, and economic sustainability
+        as keys.
     """
     see = {"social_sustainability":0, "environmental_sustainability":0, "economic_sustainability":0}
 
@@ -93,14 +93,14 @@ def label_sdg(sdg_id):
 
     Parameters
     ----------
-        sdg_id: list
-            A list of SDG id.
+    sdg_id: list
+        A list of SDG id.
 
     Returns
     -------
-        sdg_desc: list
-            SDG descriptions corresponding to the list of SDG id.
-            Source: https://sdgs.un.org/goals
+    sdg_desc: list
+        SDG descriptions corresponding to the list of SDG id.
+        Source: https://sdgs.un.org/goals
     """
     sdg_desc = []
 
@@ -118,14 +118,14 @@ def label_target(target_id):
 
     Parameters
     ----------
-        target_id: list
-            A list of target id.
+    target_id: list
+        A list of target id.
 
     Returns
     -------
-        target_desc: list
-            Target descriptions corresponding to the list of target id.
-            Source: https://unstats.un.org/sdgs/indicators/indicators-list/
+    target_desc: list
+        Target descriptions corresponding to the list of target id.
+        Source: https://unstats.un.org/sdgs/indicators/indicators-list/
     """
     target_desc = []
 
@@ -143,33 +143,33 @@ class SeeSus():
 
     Attributes
     ----------
-        sus: bool
-            Whether text aligns with sustainability as defined by the SDGs.
-            True: text aligns with the SDGs.
-            False: text does not align with the SDGs.
-        sdg: list
-            Goal-level SDGs identified in text.
-        target: list
-            SDG targets identified in text.
-        match: list
-            Match types, either "direct" (e.g., "no poverty" matches SDG1: No Poverty)
-            or "indirect" (e.g., "no more starving" matches SDG2: Zero Hunger).
-        sdg_desc: list
-            SDG descriptions corresponding to the list of SDGs.
-            Source: https://sdgs.un.org/goals
-        target_desc: list
-            Target descriptions corresponding to the list of SDG targets.
-            Source: https://unstats.un.org/sdgs/indicators/indicators-list/
-        see: dict
-            A dictionary of boolean values with social, environmental, and economic sustainability
-            as keys.
+    sus: bool
+        Whether text aligns with sustainability as defined by the SDGs.
+        True: text aligns with the SDGs.
+        False: text does not align with the SDGs.
+    sdg: list
+        Goal-level SDGs identified in text.
+    target: list
+        SDG targets identified in text.
+    match: list
+        Match types, either "direct" (e.g., "no poverty" matches SDG1: No Poverty)
+        or "indirect" (e.g., "no more starving" matches SDG2: Zero Hunger).
+    sdg_desc: list
+        SDG descriptions corresponding to the list of SDGs.
+        Source: https://sdgs.un.org/goals
+    target_desc: list
+        Target descriptions corresponding to the list of SDG targets.
+        Source: https://unstats.un.org/sdgs/indicators/indicators-list/
+    see: dict
+        A dictionary of boolean values with social, environmental, and economic sustainability
+        as keys.
 
     Methods
     -------
-        show_syntax(sdg_id):
-            Print the regular expression match syntax of target-level SDGs.
-        edit_syntax(sdg_id, new_syntax, match_type="indirect"):
-            Edit the regular expression match syntax of target-level SDGs.
+    show_syntax(sdg_id):
+        Print the regular expression match syntax of target-level SDGs.
+    edit_syntax(sdg_id, new_syntax, match_type="indirect"):
+        Edit the regular expression match syntax of target-level SDGs.
     """
 
     def __init__(self, text):
@@ -178,9 +178,9 @@ class SeeSus():
 
         Parameters
         ----------
-            text: str
-                Text to be analyzed. It is recommended to input one sentence rather than
-                a lengthy paragraph.
+        text: str
+            Text to be analyzed. It is recommended to input one sentence rather than
+            a lengthy paragraph.
         """
         self.sus, self.sdg, self.target, self.match = id_sus(text)
         self.sdg_desc = label_sdg(self.sdg)
@@ -194,16 +194,16 @@ class SeeSus():
 
         Parameters
         ----------
-            sdg_id: str
-                Target-level SDG id (e.g., "SDG1_1").
+        sdg_id: str
+            Target-level SDG id (e.g., "SDG1_1").
 
         Returns
         -------
-            None
+        None
 
         Raises
         ------
-            ValueError: if sdg_id is invalid.
+        ValueError: if sdg_id is invalid.
         """
         ids = list({item["SDG_id"] for item in SDG_keys})
         if sdg_id not in ids: # check if sdg id is valid
@@ -219,23 +219,23 @@ class SeeSus():
 
         Parameters
         ----------
-            sdg_id: str
-                Target level SDG id (e.g., "SDG1_1").
-            new_syntax: str
-                User defined matching syntax.
-                More info on regular expressions: https://regex101.com/.
-            match_type: str, optional
-                The match type of syntax to be edited, either "direct" (e.g., "SDG 1")
-                or "indirect" ("no more starving"). Default is "indirect".
+        sdg_id: str
+            Target level SDG id (e.g., "SDG1_1").
+        new_syntax: str
+            User defined matching syntax.
+            More info on regular expressions: https://regex101.com/.
+        match_type: str, optional
+            The match type of syntax to be edited, either "direct" (e.g., "SDG 1")
+            or "indirect" ("no more starving"). Default is "indirect".
 
         Returns
         -------
-            None
+        None
 
         Raises
         ------
-            ValueError: if sdg_id is invalid.
-            ValueError: if match_type is invalid.
+        ValueError: if sdg_id is invalid.
+        ValueError: if match_type is invalid.
         """
         ids = list({item["SDG_id"] for item in SDG_keys})
         if sdg_id not in ids:  # check if sdg id is valid

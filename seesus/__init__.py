@@ -1,6 +1,6 @@
 """
 seesus
------------------------------------------------------------------------
+------
 A Python tool for checking whether a textual expression aligns with sustainability as defined by the United Nations Sustainable Development Goals.
 
 __version__ = "1.0.0"

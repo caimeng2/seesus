@@ -1,4 +1,4 @@
-"""Test seesus module"""
+"""Test seesus module."""
 
 import pytest
 from seesus import seesus
@@ -33,3 +33,4 @@ def test_show_syntax():
 def test_edit_syntax():
     """Test editing the regular expression match syntax of target-level SDGs."""
     assert seesus.SeeSus.edit_syntax("SDG1_general", "new terms") is None
+    

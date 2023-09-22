@@ -1,7 +1,4 @@
-"""
-Sustainability search terms as defined by the United Nations Sustainable Development Goals.
-The search terms attain an accuracy rate of 75.5%, as determined by alignment with manual coding.
-"""
+"""Sustainability search terms as defined by the United Nations Sustainable Development Goals."""
 
 SDG_keys = [{'SDG_id': 'SDG1_general', 'SDG_keywords': '(sdg|goal)[^0-9]{0,2}(?=1\\b)|No Poverty', 'match_type': 'direct'}, 
             {'SDG_id': 'SDG2_general', 'SDG_keywords': '(sdg|goal)[^0-9]{0,2}(?=2\\b)|Zero Hunger', 'match_type': 'direct'}, 
