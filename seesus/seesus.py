@@ -163,13 +163,6 @@ class SeeSus():
     see: dict
         A dictionary of boolean values with social, environmental, and economic sustainability
         as keys.
-
-    Methods
-    -------
-    show_syntax(sdg_id):
-        Print the regular expression match syntax of target-level SDGs.
-    edit_syntax(sdg_id, new_syntax, match_type="indirect"):
-        Edit the regular expression match syntax of target-level SDGs.
     """
 
     def __init__(self, text):
@@ -190,7 +183,7 @@ class SeeSus():
     @staticmethod
     def show_syntax(sdg_id):
         """
-        Print the regular expression match syntax of SDGs.
+        Print the regular expression match syntax of target-level SDGs.
 
         Parameters
         ----------
