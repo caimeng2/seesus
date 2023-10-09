@@ -13,6 +13,10 @@
 
 `pip install seesus`
 
+or
+
+`git clone https://github.com/caimeng2/seesus.git`
+
 # Example
 
 ```python
@@ -20,10 +24,13 @@ from seesus import SeeSus
 text = "We aim to contribute to the mitigation of climate change by reducing carbon emissions in the city."
 result = SeeSus(text)
 print(result.sus)
+print(result.sdg_desc)
+print(result.target_desc)
+print(result.see)
 ```
-True
 
 ```python
-print(result.sdg)
-print(result.sdg_desc)
+SeeSus.show_syntax("SDG1_general")
 ```
+
+Please run `example.ipynb` to see more example usage.
