@@ -8,14 +8,14 @@
 
 `seesus` currently has four main functions:
 
-1. Evaluate whether a statement aligns with sustainability
+1. Evaluate whether a statement aligns with the concept of sustainability
 2. Identify SDGs and associated targets in a statement
 3. Classify a statement into social, environmental, and economic sustainability
 4. Examine and customize match syntax
 
 # Installation
 
-Coming soon.
+git clone https://github.com/caimeng2/seesus.git
 
 # Example
 
