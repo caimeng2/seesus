@@ -4,7 +4,7 @@
 
 # seesus: a social, environmental, and economic sustainability classifier
 
-`seesus` is a **Python** software that evaluates whether a textual expression aligns with the concept of sustainability as defined by the United Nations Sustainable Development Goals (SDGs). It labels a statement with the 17 SDGs as well as 169 specific targets and categorizes the statement into social, environmental, or economic sustainability. For analysis in **R**, please check <a href="https://github.com/Yingjie4Science/SDGdetector" target="_blank">`SDGdector`</a>.
+`seesus` is a **Python** software that evaluates whether a textual expression aligns with the concept of sustainability as defined by the United Nations Sustainable Development Goals (SDGs). It labels a statement with the 17 SDGs as well as 169 specific targets and categorizes the statement into social, environmental, or economic sustainability. For analysis in **R**, please check <a target="_blank" href="https://github.com/Yingjie4Science/SDGdetector">`SDGdector`</a>.
 
 `seesus` currently has four main functions:
 
@@ -17,37 +17,36 @@
 
 `pip install seesus`
 
-or
-
-`git clone https://github.com/caimeng2/seesus.git`
 
 # Example
 
 ```python
 from seesus import SeeSus
+
 text = "We aim to contribute to the mitigation of climate change by reducing carbon emissions in the city."
 result = SeeSus(text)
 
-## print result on whether a statement aligns with sustainability, True or False
+# print result on whether a statement aligns with sustainability, True or False
 print(result.sus)
 
-## print the names of identified SDGs
+# print the names of identified SDGs
 print(result.sdg)
-## print the descriptions of identified SDGs
+# print the descriptions of identified SDGs
 print(result.sdg_desc)
 
-## print the names of identified SDG targets
+# print the names of identified SDG targets
 print(result.target)
-## print the descriptions of identified SDG targets
+# print the descriptions of identified SDG targets
 print(result.target_desc)
 
-## determine which dimension of sustainability (social, environmental, or economic) a statement belongs to
+# determine which dimension of sustainability (social, environmental, or economic) a statement belongs to
 print(result.see)
-```
 
-## To examine and customize match syntax
-```python
+# print match syntax
 SeeSus.show_syntax("SDG1_general")
+
+# customize match dyntax
+SeeSus.edit_syntax("SDG1_general", "my match terms")
 ```
 
 Please run `example.ipynb` to see more example usage.
