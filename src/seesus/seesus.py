@@ -7,6 +7,7 @@ from seesus.SDG_keys import SDG_keys
 from seesus.see_keys import see_keys
 from seesus.SDG_desc import goal_desc, tar_desc
 
+
 def id_sus(text):
     """
     Identify the UN Sustainable Development Goals (SDGs) and their associated targets in text.
@@ -35,7 +36,7 @@ def id_sus(text):
     ------
     TypeError: if text is not a string.
     """
-    if not isinstance(text, str): # check input data type
+    if not isinstance(text, str):  # check input data type
         raise TypeError("Input must be a string.")
 
     sdgs = []
@@ -51,12 +52,13 @@ def id_sus(text):
             targets.append(sdg_id)
             matches.append(match_type)
 
-    sdgs = list(set(sdgs)) # keep unique sdgs
+    sdgs = list(set(sdgs))  # keep unique sdgs
     targets = list(set(targets))
     matches = list(set(matches))
     sus = bool(sdgs)
 
     return sus, sdgs, targets, matches
+
 
 def cat_sus(target):
     """
@@ -73,7 +75,8 @@ def cat_sus(target):
         A dictionary of boolean values with social, environmental, and economic sustainability
         as keys.
     """
-    see = {"social_sustainability":0, "environmental_sustainability":0, "economic_sustainability":0}
+    see = {"social_sustainability": 0,
+           "environmental_sustainability": 0, "economic_sustainability": 0}
 
     for item in see_keys:
         sdg_id, soc, env, econ = item[:4]
@@ -83,9 +86,11 @@ def cat_sus(target):
                 see["environmental_sustainability"] += int(env)
                 see["economic_sustainability"] += int(econ)
 
-    see = {key: True if see[key] > 0 else False for key in see} # convert to boolean values
+    # convert to boolean values
+    see = {key: True if see[key] > 0 else False for key in see}
 
     return see
+
 
 def label_sdg(sdg_id):
     """
@@ -112,6 +117,7 @@ def label_sdg(sdg_id):
 
     return sdg_desc
 
+
 def label_target(target_id):
     """
     Label target id with target description.
@@ -136,6 +142,7 @@ def label_target(target_id):
                 target_desc.append(desc)
 
     return target_desc
+
 
 class SeeSus():
     """
@@ -178,6 +185,15 @@ class SeeSus():
         self.target_desc = label_target(self.target)
         self.see = cat_sus(self.target)
 
+    def __str__(self):
+        """
+        Print out a summary of the results from the classifyer
+        """
+        str = "String matched the following SDGs\n"
+        for target, desc in zip(self.target, self.target_desc):
+            str += f"    {target} - {desc}\n"
+        return str
+
     @staticmethod
     def show_syntax(sdg_id):
         """
@@ -197,7 +213,7 @@ class SeeSus():
         ValueError: if sdg_id is invalid.
         """
         ids = list({item["SDG_id"] for item in SDG_keys})
-        if sdg_id not in ids: # check if sdg id is valid
+        if sdg_id not in ids:  # check if sdg id is valid
             raise ValueError(f"Invalid input. Choose one in the list: {ids}")
 
         syntax = [d for d in SDG_keys if d["SDG_id"] == sdg_id]
@@ -230,7 +246,8 @@ class SeeSus():
         """
         ids = list({item["SDG_id"] for item in SDG_keys})
         if sdg_id not in ids:  # check if sdg id is valid
-            raise ValueError(f"Invalid input '{sdg_id}'. Use one in the list: {ids}.")
+            raise ValueError(
+                f"Invalid input '{sdg_id}'. Use one in the list: {ids}.")
         if match_type not in ["direct", "indirect"]:  # check if match type is valid
             raise ValueError(
                 f"Invalid input '{match_type}'. Use 'direct' or 'indirect'. Default is 'indirect'.")
@@ -240,7 +257,7 @@ class SeeSus():
             if item["SDG_id"] == sdg_id and item["match_type"] == match_type:
                 match += 1
                 item.update({"SDG_keywords": new_syntax})
-        if match == 0: # when the direct/indirect match type does not exist
+        if match == 0:  # when the direct/indirect match type does not exist
             SDG_keys.append({"SDG_id": sdg_id,
                              "SDG_keywords": new_syntax,
                              "match_type": match_type})
