@@ -187,11 +187,11 @@ class SeeSus():
 
     def __str__(self):
         """
-        Print out a summary of the results from the classifyer
+        Print out a summary of the results from the classifier
         """
-        str = "String matched the following SDGs\n"
-        for target, desc in zip(self.target, self.target_desc):
-            str += f"    {target} - {desc}\n"
+        str = f"The text matched the following SDGs at the target level:\n"
+        for target, target_desc in zip(self.target, self.target_desc):
+            str += f"    {target} - {target_desc}\n"
         return str
 
     @staticmethod
