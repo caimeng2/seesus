@@ -54,7 +54,7 @@ bibliography: paper.bib
 
 # Statement of need
 
-Sustainability is an important topic in contemporary discourse. However, the delineation and interpretation of this concept are often different across disciplines [@Salas-Zapata_Ríos-Osorio_Cardona-Arias_2017], which hinders effective communication, causes inconsistencies in research and practice, and impedes measurable actions to achieve sustainability [@Waseem_Kota_2017_Yamada_Kanoi_Koh_Lim_Dove_2022]. With the increasing popularity of text-based assessments [@Amini_Bienstock_Narcum_2018_Olsen_Fenhann_2008_Singh_Meena_Khandelwal_Dangayach_2023], these issues have become more prominent, as the criteria vary for evaluating sustainability commitments and contributions.
+Sustainability is an important topic in contemporary discourse. However, the delineation and interpretation of this concept are often different across disciplines [@Salas-Zapata_Ríos-Osorio_Cardona-Arias_2017], which hinders effective communication, causes inconsistencies in research and practice, and impedes measurable actions to achieve sustainability [@Waseem_Kota_2017; @Yamada_Kanoi_Koh_Lim_Dove_2022]. With the increasing popularity of text-based assessments [@Amini_Bienstock_Narcum_2018; @Olsen_Fenhann_2008; @Singh_Meena_Khandelwal_Dangayach_2023], these issues have become more prominent, as the criteria vary for evaluating sustainability commitments and contributions.
 
 `seesus`, based on the United Nations (UN) Sustainable Development Goals (SDGs), addresses the critical need in text analysis to capture the concept of sustainability with a rigorous and credible definition. The SDGs provide an international framework and a shared understanding of what it means to be sustainable, balancing the environmental, economic, and social dimensions of sustainability [@UN_2015]. `seesus` identifies expressions regarding achieving the 17 SDGs and their associated 169 targets within a text and labels whether the expressions pertain to social, environmental, or economic sustainability. Unlike other SDG text-mining packages, it is designed to identify not only terms related to the SDGs but also the attainment of SDGs.
 
@@ -64,11 +64,7 @@ Given the interdisciplinary nature of the sustainability concept, the usage of t
 
 # Functionality
 
-`seesus` currently has four main functions:
-(1) Evaluating whether a statement aligns with the concept of sustainability.
-(2) Identifying SDGs and associated targets in a statement.
-(3) Classifying a statement into social, environmental, and economic sustainability.
-(4) Examining and customizing match syntax.
+`seesus` currently has four main functions: (1) evaluating whether a statement aligns with the concept of sustainability; (2) identifying SDGs and associated targets in a statement; (3) classifying a statement into social, environmental, and economic sustainability; (4) examining and customizing match syntax.
 
 # Acknowledgements
 
