@@ -10,11 +10,11 @@ build-backend = "setuptools.build_meta"
 name = "seesus"
 version = "1.2.0"
 authors = [
-    {name="Meng Cai", email="mengcai24601@gmail.com", orcid="0000-0002-8318-572X"},
-    {name="Yingjie Li", email="yingjieli.edu@gmail.com", orcid="0000-0002-8401-0649"},
-    {name="Dirk Colbry", email="colbrydi@msu.edu", orcid="0000-0003-0666-9883"},
-    {name="Veronica Frans", email="verofrans@gmail.com", orcid="0000-0002-5634-3956"},
-    {name="Yuqian Zhang", email="zhan1364@msu.edu", orcid="0000-0001-7576-2526"}
+    {name="Meng Cai", email="mengcai24601@gmail.com"},
+    {name="Yingjie Li", email="yingjieli.edu@gmail.com"},
+    {name="Dirk Colbry", email="colbrydi@msu.edu"},
+    {name="Veronica Frans", email="verofrans@gmail.com"},
+    {name="Yuqian Zhang", email="zhan1364@msu.edu"}
     ]
 description = "a social, environmental, and economic sustainability classifier based on the UN Sustainable Development Goals"
 readme = "README.md"
