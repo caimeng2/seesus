@@ -69,6 +69,7 @@ Given the interdisciplinary nature of the sustainability concept, the usage of t
 # Acknowledgements
 
 Funded by the European Union (ERC, scAInce, 101087218). Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them. MC was supported by the Michigan State University Dissertation Completion Fellowship. VFF was supported by the National Science Foundation Graduate Research Fellowship Program (Fellow ID: 2018253044) and the Michigan State University Enrichment Fellowship.
-![](LOGO_ERC-FLAG_FP.png){ width=15% }
+
+![](LOGO_ERC-FLAG_FP.png){ width=20% }
 
 # References
