@@ -26,6 +26,9 @@ from seesus import SeeSus
 text = "We aim to contribute to the mitigation of climate change by reducing carbon emissions in the city."
 result = SeeSus(text)
 
+# print a summary of the results
+print(result)
+
 # print result on whether a statement aligns with sustainability, True or False
 print(result.sus)
 
