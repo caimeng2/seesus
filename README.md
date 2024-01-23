@@ -8,19 +8,19 @@
 
 `seesus` currently has four main functions:
 
-1. Evaluate whether a statement aligns with the concept of sustainability
-2. Identify SDGs and associated targets in a statement
-3. Classify a statement into social, environmental, and economic sustainability
-4. Examine and customize match syntax
+1. Evaluating whether a statement aligns with the concept of sustainability
+2. Identifying SDGs and associated targets in a statement
+3. Classifying a statement into social, environmental, and economic sustainability
+4. Customizing match syntax
 
-# Installation
+## Installation
 
 You can install `seesus` from PyPI by inputting the following command in your terminal:
 
 `pip install seesus`
 
 
-# Example
+## Example
 
 
 ### Example 1: analyzing an individual sentence
@@ -53,7 +53,7 @@ print(result1.see)
 
 ### Example 2: analyzing a paragraph 
 
-To achieve the best results, it is recommended to split a paragraph or a whole document into individual sentences (i.e., using individual sentences as the basic unit for `seesus` to analyze). This can be done by tools such as nltk.tokenize and re.split.
+To achieve the best results, it is recommended to split a paragraph or a whole document into individual sentences (i.e., using individual sentences as the basic unit for `seesus` to analyze). This can be done by tools such as `nltk.tokenize` and `re.split`.
 
 ```python
 from nltk.tokenize import sent_tokenize
@@ -69,7 +69,11 @@ for sent in sent_tokenize(text2):
     print("Which SDG targets specifically?", result.target)
     print("which dimensions of sustainability?", result.see)
     print("----------------")
+```
 
+### Customizing match syntax
+
+```python
 # print match syntax
 SeeSus.show_syntax("SDG1_general")
 
