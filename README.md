@@ -13,6 +13,7 @@
 3. Classifying a statement into social, environmental, and economic sustainability
 4. Customizing match syntax
 
+
 ## Installation
 
 You can install `seesus` from PyPI by inputting the following command in your terminal:
@@ -21,7 +22,6 @@ You can install `seesus` from PyPI by inputting the following command in your te
 
 
 ## Example
-
 
 ### Analyzing an individual sentence
 
@@ -82,3 +82,8 @@ SeeSus.edit_syntax("SDG1_general", "my match terms")
 ```
 
 Please run `example.ipynb` to see more example usage.
+
+
+## Maintenance
+
+Please report any [issues](https://github.com/caimeng2/seesus/issues) if you find that a matching syntax is not accurate or can be improved. We welcome contributions to enhance the classification accuracy of `seesus`.
