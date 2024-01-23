@@ -15,37 +15,60 @@
 
 # Installation
 
-You can install `seesus` from PyPI by inputting the following command in your terminal.
+You can install `seesus` from PyPI by inputting the following command in your terminal:
 
 `pip install seesus`
 
 
 # Example
 
+
+### Example 1: analyzing an individual sentence
+
 ```python
 from seesus import SeeSus
 
-text = "We aim to contribute to the mitigation of climate change by reducing carbon emissions in the city."
-result = SeeSus(text)
+text1 = "We aim to contribute to the mitigation of climate change by reducing carbon emissions in the city."
+result1 = SeeSus(text1)
 
 # print a summary of the results
-print(result)
+print(result1)
 
 # print result on whether a statement aligns with sustainability, True or False
-print(result.sus)
+print(result1.sus)
 
 # print the names of identified SDGs
-print(result.sdg)
+print(result1.sdg)
 # print the descriptions of identified SDGs
-print(result.sdg_desc)
+print(result1.sdg_desc)
 
 # print the names of identified SDG targets
-print(result.target)
+print(result1.target)
 # print the descriptions of identified SDG targets
-print(result.target_desc)
+print(result1.target_desc)
 
 # determine which dimension of sustainability (social, environmental, or economic) a statement belongs to
-print(result.see)
+print(result1.see)
+```
+
+### Example 2: analyzing a paragraph 
+
+To achieve the best results, it is recommended to split a paragraph or a whole document into individual sentences (i.e., using individual sentences as the basic unit for `seesus` to analyze). This can be done by tools such as nltk.tokenize and re.split.
+
+```python
+from nltk.tokenize import sent_tokenize
+
+# source: https://www.nyc.gov/site/planning/about/dcp-priorities/resiliency-sustainability.page
+text2 = "By working with communities in the floodplain and facilitating flood-resistant building design, DCP is reducing the city’s risks to sea level rise and coastal flooding. Hurricane Sandy was a stark reminder of these risks. The City, led by the Mayor’s Office of Recovery and Resiliency (ORR), has developed a multifaceted plan for recovering from Sandy and improving the city’s resiliency–the ability of its neighborhoods, buildings and infrastructure to withstand and recover quickly from flooding and climate events. As part of this effort, DCP has initiated a series of projects to identify and implement land use and zoning changes as well as other actions needed to support the short-term recovery and long-term vitality of communities affected by Hurricane Sandy and other areas at risk of coastal flooding."
+
+for sent in sent_tokenize(text2):
+    result = SeeSus(sent)
+    print('"', sent, '"', sep = "")
+    print("Is the sentence related to achieving sustainability?", result.sus)
+    print("Which SDGs?", result.sdg)
+    print("Which SDG targets specifically?", result.target)
+    print("which dimensions of sustainability?", result.see)
+    print("----------------")
 
 # print match syntax
 SeeSus.show_syntax("SDG1_general")
