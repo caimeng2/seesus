@@ -16,7 +16,7 @@
 
 ## Installation
 
-You can install `seesus` from PyPI by inputting the following command in your terminal:
+Please install `seesus` from PyPI by inputting the following command in your terminal:
 
 `pip install seesus`
 
