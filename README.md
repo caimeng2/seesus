@@ -51,7 +51,7 @@ print(result1.target_desc)
 print(result1.see)
 ```
 
-### Analyzing a paragraph /a longer document
+### Analyzing a paragraph/ longer document
 
 To achieve the best results, it is recommended to split a paragraph or a whole document into individual sentences (i.e., using individual sentences as the basic unit for `seesus` to analyze). This can be done by tools such as `nltk.tokenize` and `re.split`.
 
