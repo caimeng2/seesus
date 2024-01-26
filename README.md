@@ -56,12 +56,12 @@ print(result1.see)
 To achieve the best results, it is recommended to split a paragraph or a whole document into individual sentences (i.e., using individual sentences as the basic unit for `seesus` to analyze). This can be done by tools such as `nltk.tokenize` and `re.split`.
 
 ```python
-from nltk.tokenize import sent_tokenize
+import re
 
 # source: https://www.nyc.gov/site/planning/about/dcp-priorities/resiliency-sustainability.page
 text2 = "By working with communities in the floodplain and facilitating flood-resistant building design, DCP is reducing the city’s risks to sea level rise and coastal flooding. Hurricane Sandy was a stark reminder of these risks. The City, led by the Mayor’s Office of Recovery and Resiliency (ORR), has developed a multifaceted plan for recovering from Sandy and improving the city’s resiliency–the ability of its neighborhoods, buildings and infrastructure to withstand and recover quickly from flooding and climate events. As part of this effort, DCP has initiated a series of projects to identify and implement land use and zoning changes as well as other actions needed to support the short-term recovery and long-term vitality of communities affected by Hurricane Sandy and other areas at risk of coastal flooding."
 
-for sent in sent_tokenize(text2):
+for sent in re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', text2):
     result = SeeSus(sent)
     print('"', sent, '"', sep = "")
     print("Is the sentence related to achieving sustainability?", result.sus)
