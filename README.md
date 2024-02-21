@@ -64,7 +64,7 @@ text2 = "By working with communities in the floodplain and facilitating flood-re
 for sent in re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', text2):
     result = SeeSus(sent)
     print('"', sent, '"', sep = "")
-    print("Is the sentence related to achieving sustainability?", result.sus)
+    print("Is the sentence related to the concept of sustainability?", result.sus)
     print("Which SDGs?", result.sdg)
     print("Which SDG targets specifically?", result.target)
     print("which dimensions of sustainability?", result.see)
