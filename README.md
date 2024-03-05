@@ -51,7 +51,7 @@ print(result1.target_desc)
 print(result1.see)
 ```
 
-### Analyzing a paragraph/ longer document
+### Analyzing a paragraph or a longer document
 
 To achieve the best results, it is recommended to split a paragraph or a whole document into individual sentences (i.e., using individual sentences as the basic unit for `seesus` to analyze). This can be done by tools such as `nltk.tokenize` and `re.split`.
 
@@ -82,6 +82,11 @@ SeeSus.edit_syntax("SDG1_general", "my match terms")
 ```
 
 Please run `example.ipynb` to see more example usage.
+
+
+## Methodology
+
+In an era of large language models, `seesus` chooses to use predefined regular expression patterns instead of machine learning for text classification, because this method is more transparent, replicable, and controllable. Users of `seesus` can examine the matching logic and customize the syntax if necessary, so users can always understand and maintain control over the results. The regular expression syntax was developed for the 17 SDGs and the 169 SDG targets, including both direct and indirect matching. The accuracy of the matching syntax was manually tested, reviewed, and improved using randomly selected statements from corporate reports. Three rounds of adjustments were conducted to finalize the syntax. `seesus` achieves an accuracy rate of 76%, as determined by alignment with manual coding. Human intercoder agreement on the same text stands at 83%. Considering the inherent ambiguity and complexity of language, as well as the interconnected nature of the SDGs, the accuracy of `seesus` is rather high. Detailed information on the accuracy evaluation and manual refinement can be found in <a target="_blank" href="https://github.com/Yingjie4Science/SDGdetector">`SDGdector`</a>.
 
 
 ## Maintenance
