@@ -26,11 +26,11 @@ authors:
       orcid: 0000-0001-7576-2526
       affiliation: "5, 8"
 affiliations:
-    - name: School of Planning, Design and Construction, Michigan State University, East Lansing, MI, 48824, United States
+    - name: School of Planning, Design and Construction, Michigan State University, East Lansing, MI 48824, United States
       index: 1
     - name: Department of Civil and Environmental Engineering, Technical University of Darmstadt, Darmstadt 64287, Germany
       index: 2
-    - name: Natural Capital Project, Woods Institute for the Environment, Stanford University, Stanford, CA, 94305, United States
+    - name: Natural Capital Project, Woods Institute for the Environment, Stanford University, Stanford, CA 94305, United States
       index: 3
     - name: Department of Computational Mathematics, Science and Engineering, Michigan State University, East Lansing, MI 48824, United States
       index: 4
@@ -43,7 +43,7 @@ affiliations:
     - name: Environmental Science and Policy Program, Michigan State University, East Lansing, MI 48823, United States
       index: 8
 
-date: 5 March 2024
+date: 22 March 2024
 bibliography: paper.bib
 
 ---
@@ -58,7 +58,7 @@ Sustainability is an important topic in contemporary discourse. However, the del
 
 `seesus`, based on the United Nations (UN) Sustainable Development Goals (SDGs), addresses the critical need in text analysis to capture the concept of sustainability with a rigorous and credible definition. The SDGs provide an international framework and a shared understanding of what it means to be sustainable, balancing the environmental, economic, and social dimensions of sustainability [@UN_2015]. Automated text analysis to align and classify statements according to the SDGs can help identify the focal points for sustainable development strategies and facilitate data-driven decision-making processes in pursuit of the SDGs. `seesus` identifies expressions regarding the 17 SDGs and their associated 169 targets within text and labels whether the expressions pertain to social, environmental, or economic sustainability.
 
-In an era of large language models, `seesus` chooses to use predefined regular expression patterns instead of machine learning for text classification, because this method is more transparent, replicable, and controllable. Users of `seesus` can examine the matching logic and customize the syntax if necessary, so users can always understand and maintain control over the results. In addition, compared to other text classifiers based on the SDGs in Python, including `SDG-Classifier` [@Rawat_2022], `SDG Auto Labeller` [@Glass_2020], `UN-SDG-Classifier` [@Lamichaney_2021], `EUR-SDG-Mapper` [@Jelicic_van_der_Vorst_Ranjbar_Mijnhardt_2022], and `OSDG` [@Pukelis_Bautista-Puig_Statulevičiūtė_Stančiauskas_Dikmener_Akylbekova_2022], `seesus` is the only one that covers all the SDGs and is fine-tuned to the target level. In particular, we developed regular expression matching syntax for the 17 SDGs and the 169 SDG targets, including both direct and indirect matching. We manually tested, reviewed, and improved the accuracy of the matching syntax using randomly selected statements from corporate reports. We went through three rounds of adjustments to finalize the syntax.
+In an era of large language models, we choose to use predefined regular expression patterns instead of machine learning for text classification, because this method is more transparent, replicable, and controllable. Users of `seesus` can examine the matching logic and customize the syntax if necessary, so users can always understand and maintain control over the results. In addition, compared to other text classifiers based on the SDGs in Python, including `SDG-Classifier` [@Rawat_2022], `SDG Auto Labeller` [@Glass_2020], `UN-SDG-Classifier` [@Lamichaney_2021], `EUR-SDG-Mapper` [@Jelicic_van_der_Vorst_Ranjbar_Mijnhardt_2022], and `OSDG` [@Pukelis_Bautista-Puig_Statulevičiūtė_Stančiauskas_Dikmener_Akylbekova_2022], `seesus` is the only one that covers all the SDGs and is fine-tuned to the target level. In particular, we developed regular expression matching syntax for the 17 SDGs and the 169 SDG targets, including both direct and indirect matching. We manually tested, reviewed, and improved the accuracy of the matching syntax using randomly selected statements from corporate reports. We went through three rounds of adjustments to finalize the syntax.
 
 `seesus` achieves an accuracy rate of 76%, as determined by alignment with manual coding. Human intercoder agreement on the same text stands at 83%. Considering the inherent ambiguity and complexity of language, as well as the interconnected nature of the SDGs, the accuracy of `seesus` is rather high. Other SDG text classifiers did not report accuracy evaluations. Detailed information on our accuracy evaluation and manual refinement can be found in `SDGdetector` [@Li_Frans_Song_Cai_Zhang_Liu_2023], our R package employing the same matching logic as `seesus`.
 
@@ -72,7 +72,7 @@ It is worth noting the limitations of `seesus`. Because of regular expressions�
 
 # Acknowledgements
 
-MC was supported by the Michigan State University Dissertation Completion Fellowship. VFF was supported by the National Science Foundation Graduate Research Fellowship Program (Fellow ID: 2018253044) and the Michigan State University Enrichment Fellowship. This project was partly funded by the European Union (ERC, scAInce, 101087218). Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.
+MC was supported by the Michigan State University Dissertation Completion Fellowship. VFF was supported by the National Science Foundation Graduate Research Fellowship Program (Fellow ID: 2018253044) and the Michigan State University Enrichment Fellowship. Funded by the European Union (ERC, scAInce, 101087218). Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.
 
 ![](LOGO_ERC-FLAG_FP.png){ width=30% }
 
