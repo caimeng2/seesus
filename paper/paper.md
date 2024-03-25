@@ -50,7 +50,7 @@ bibliography: paper.bib
 
 # Summary
 
-`seesus` is an open-source Python package that evaluates whether a textual expression aligns with the concept of sustainability as defined by the United Nations Sustainable Development Goals (SDGs). It labels a statement with the 17 SDGs as well as 169 specific targets and categorizes the statement into social, environmental, or economic sustainability. Compared to existing SDG classification software in Python, `seesus` is the only one that is tuned to a finer scale – the SDG target level – and offers transparency and controllability, allowing users to examine and customize the syntax of text classification according to their needs.
+`seesus` is an open-source Python package that evaluates whether a textual expression aligns with the concept of sustainability as defined by the United Nations Sustainable Development Goals (SDGs). It labels a statement with the 17 SDGs as well as 169 specific targets and categorizes the statement into social, environmental, or economic sustainability. Compared to existing SDG classification software in Python, `seesus` is the only one that is tuned to a finer scale — the SDG target level — and offers transparency and controllability, allowing users to examine and customize the syntax of text classification according to their needs.
 
 # Statement of need
 
