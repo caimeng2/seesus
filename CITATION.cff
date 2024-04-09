@@ -1,0 +1,56 @@
+cff-version: "1.2.0"
+authors:
+- family-names: Cai
+  given-names: Meng
+  orcid: "https://orcid.org/0000-0002-8318-572X"
+- family-names: Li
+  given-names: Yingjie
+  orcid: "https://orcid.org/0000-0002-8401-0649"
+- family-names: Colbry
+  given-names: Dirk
+  orcid: "https://orcid.org/0000-0003-0666-9883"
+- family-names: Frans
+  given-names: Veronica F.
+  orcid: "https://orcid.org/0000-0002-5634-3956"
+- family-names: Zhang
+  given-names: Yuqian
+  orcid: "https://orcid.org/0000-0001-7576-2526"
+contact:
+- family-names: Cai
+  given-names: Meng
+  orcid: "https://orcid.org/0000-0002-8318-572X"
+doi: 10.5281/zenodo.10854083
+message: If you use this software, please cite our article in the
+  Journal of Open Source Software.
+preferred-citation:
+  authors:
+  - family-names: Cai
+    given-names: Meng
+    orcid: "https://orcid.org/0000-0002-8318-572X"
+  - family-names: Li
+    given-names: Yingjie
+    orcid: "https://orcid.org/0000-0002-8401-0649"
+  - family-names: Colbry
+    given-names: Dirk
+    orcid: "https://orcid.org/0000-0003-0666-9883"
+  - family-names: Frans
+    given-names: Veronica F.
+    orcid: "https://orcid.org/0000-0002-5634-3956"
+  - family-names: Zhang
+    given-names: Yuqian
+    orcid: "https://orcid.org/0000-0001-7576-2526"
+  date-published: 2024-04-08
+  doi: 10.21105/joss.06244
+  issn: 2475-9066
+  issue: 96
+  journal: Journal of Open Source Software
+  publisher:
+    name: Open Journals
+  start: 6244
+  title: "seesus: a social, environmental, and economic sustainability
+    classifier for Python"
+  type: article
+  url: "https://joss.theoj.org/papers/10.21105/joss.06244"
+  volume: 9
+title: "seesus: a social, environmental, and economic sustainability
+  classifier for Python"
