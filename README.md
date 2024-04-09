@@ -91,6 +91,26 @@ Please run `example.ipynb` to see more example usage.
 In an era of large language models, `seesus` chooses to use predefined regular expression patterns instead of machine learning, because this method is more transparent, replicable, and controllable. The regular expression syntax was developed for the 17 SDGs and the 169 SDG targets, including both direct and indirect matching. The accuracy of the matching syntax was manually tested, reviewed, and improved using randomly selected statements from corporate reports. Three rounds of adjustments were conducted to finalize the syntax. `seesus` achieves an accuracy rate of 76%, as determined by alignment with manual coding. Human intercoder agreement on the same text stands at 83%. Considering the inherent ambiguity and complexity of language, as well as the interconnected nature of the SDGs, the accuracy of `seesus` is rather high. Please see <a target="_blank" href="https://github.com/Yingjie4Science/SDGdetector">`SDGdector`</a> for detailed information on the accuracy evaluation and manual refinement.
 
 
+## How to cite
+
+Cai, M., Li, Y., Colbry, D., Frans, V. F., & Zhang, Y. (2024). seesus: a social, environmental, and economic sustainability classifier for Python. Journal of Open Source Software, 9(96), 6244. https://doi.org/10.21105/joss.06244
+
+```
+@article{Cai_seesus_a_social_2024,
+author = {Cai, Meng and Li, Yingjie and Colbry, Dirk and Frans, Veronica F. and Zhang, Yuqian},
+doi = {10.21105/joss.06244},
+journal = {Journal of Open Source Software},
+month = apr,
+number = {96},
+pages = {6244},
+title = {{seesus: a social, environmental, and economic sustainability classifier for Python}},
+url = {https://joss.theoj.org/papers/10.21105/joss.06244},
+volume = {9},
+year = {2024}
+}
+```
+
+
 ## Maintenance
 
 Please report any [issues](https://github.com/caimeng2/seesus/issues) if you find that a matching syntax is not accurate or can be improved. We welcome contributions to enhance the classification accuracy of `seesus`.
